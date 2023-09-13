@@ -1,12 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-/* Import de la font Roboto depuis Google Fonts et on l'applique sur tous les éléments de la page */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;300&family=Syne:wght@800&display=swap' );
+/* Import de la font Roboto et Syne depuis Google Fonts et on l'applique sur tous les éléments de la page */
 body * {
    font-family: 'Roboto', sans-serif;
 }
-/* On applique un gris plus clair sur les paragraphes */
-p {
-   color: #313332;
-}
+.h1 h2 h3{
+   font-family: 'Syne', sans-serif!important;
+} 
+
 /* La classe 'hover-effect' permettra de créer un effet de zoom quand l'on passera la souris par dessus les elements images enfants  */
 .hover-effect img {
    transition: all 0.33s ease-in-out;
@@ -22,3 +23,31 @@ p {
    top: 0;
    background-color: white;
 }
+body .p {
+   text-decoration-color: black;
+}
+
+/* page 'home' */
+
+/* section saumon background curved */
+
+.elementor-element-0355ae8{
+   height: 100% !important;
+   background-color: antiquewhite !important;
+   z-index: +1 !important;
+   border-radius: 0% 0% 30% 30%!important;
+   transform: scale(1.5)!important;
+}
+/* .elementor-element-0355ae8{
+   height: 150% !important;
+   z-index: -1 !important;
+   background-color: rgb(201, 125, 132)!important;
+   border-radius: 0% 0% 20% 20%!important;
+   transform: scale(1.5)!important;
+ 
+}*/
+/* canettes alignées (topfooter) */
+.elementor-widget-wrap{
+   padding: 0 !important;
+}
+ 
