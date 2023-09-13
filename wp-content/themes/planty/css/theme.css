@@ -30,14 +30,13 @@ body .p {
 /* page 'home' */
 
 /* section saumon background curved */
-
-.elementor-element-0355ae8{
+/* 
+.elementor-background-overlay{
    height: 100% !important;
-   background-color: antiquewhite !important;
    z-index: +1 !important;
    border-radius: 0% 0% 30% 30%!important;
-   transform: scale(1.5)!important;
-}
+   transform: scale(1.9)!important;
+} */
 /* .elementor-element-0355ae8{
    height: 150% !important;
    z-index: -1 !important;
