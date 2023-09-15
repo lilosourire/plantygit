@@ -58,22 +58,39 @@ gap:15px!important;
 .contacteznous label{
    text-decoration: none!important;
 }
+/* section "message" du formulaire  */
 .wpcf-form-control{
    border-color: white!important;
    border-radius: 5px!important; 
+   resize: none!important;
 }
-.contact textarea{
+.contact .wpcf7-submit{
    border-color:none!important;
    border-radius:5px!important;
    resize: none!important;
+   background: #e0b9b4!important;
+   text-decoration: white!important;
+}
+.contact wpcf7-submit{
+   background-color: blue!important;
 }
 .wpcf7-spinner{
    display: none;
 }
-textarea.wpcf7-form-control{
+/* section message */
+.wpcf7-submit{
+   color: #e0b9b4!important;
+   border-radius: 5px!important;
+} 
+/* textarea.wpcf7-form-control{
    border-radius: 5px!important;
    resize: none!important;
    border-color: white!important;
+} */
+
+.wpcf7-submit{
+   background: #e0b9b4;
+   text-decoration: white;
 }
 .boutoncontact{
    display: flex;
@@ -82,17 +99,14 @@ textarea.wpcf7-form-control{
    margin-bottom: 20px;
    margin-top: 20px;
 }
-.boutoncontact input{
-background-color: #e0b9b4!important;
-border-radius: 5px!important;
-}
-input .hover{
-Text-Decoration:none!important; 
-} 
+
 /* image collée au formulaire */
-.wp-image-425{
-   z-index: -1!important;
+/* .wp-image-425{
+   z-index: 1!important;
 }
+.wpcf7-form{
+   z-index: 3!important;
+} */
 
 /* disparition "edit" bas de page */
 
@@ -104,6 +118,23 @@ Text-Decoration:none!important;
 
 .elementor-section.elementor-section-boxed > .elementor-container {
    gap:15px;
+}
+/* boutons au dessus du formulaire */
+.commandes{
+   display: flex;
+   flex-direction: column;
+}
+.sectionboutons{
+
+}
+.boutonplus{ 
+color: red!important;
+}
+.boutonmoins{
+color: blue!important;
+}
+.boutonzero{
+   
 }
 
 /* formulaire de commande */

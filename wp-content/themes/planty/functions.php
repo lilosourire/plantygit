@@ -16,22 +16,14 @@ function theme_enqueue_styles()
 }
  */
 
-
-/**
- * Add a custom link to the end of a specific menu that uses the wp_nav_menu() function
- */
-/*  1=filtre menu et lien*/
-add_filter('wp_nav_menu_items', 'add_admin_link', 10, 2);
-/* 2=fonction + appel des éléments de l'array (ajoutter des éléments dans mon menu?) */
-function add_admin_link($items, $args)
+function wpse_add_admin_button_to_menu($items, $args)
 {
-    var_dump(is_user_logged_in());
-
-    /* si mon user est connecté (cf fontion) -is_user_logged_in() : booléen-*/
-    if (/* $args->theme_location == 'header' && */is_user_logged_in()) {
-        /* j'ajoute mon "li" au menu */
-        $items = $items . '<li><a title="H" href="' . admin_url() . '">admin</a></li>';
+    // Vérification que l'utilisateur est connecté
+    if (is_user_logged_in() && $args->theme_location == 'Primary') {
+        // Ajout du bouton "Admin"
+        $items .= '<li><a href="' . admin_url() . '">Admin</a></li>';
     }
-    /* else? =echo menu ordinaire? */
+
     return $items;
 }
+add_filter('wp_nav_menu_items', 'wpse_add_admin_button_to_menu', 10, 2);
