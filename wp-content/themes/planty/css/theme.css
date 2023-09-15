@@ -27,26 +27,121 @@ body .p {
    text-decoration-color: black;
 }
 
-/* page 'home' */
+         /* page 'home' */
 
-/* section saumon background curved */
-/* 
-.elementor-background-overlay{
-   height: 100% !important;
-   z-index: +1 !important;
-   border-radius: 0% 0% 30% 30%!important;
-   transform: scale(1.9)!important;
-} */
-/* .elementor-element-0355ae8{
-   height: 150% !important;
-   z-index: -1 !important;
-   background-color: rgb(201, 125, 132)!important;
-   border-radius: 0% 0% 20% 20%!important;
-   transform: scale(1.5)!important;
- 
-}*/
-/* canettes alignées (topfooter) */
 .elementor-widget-wrap{
    padding: 0 !important;
 }
- 
+
+         /* nous rencontrer */
+
+/* disparition du titre */
+.singular .entry-title {
+   display: none!important;
+}
+
+.singular .entry-header{
+   display: none!important;
+}
+/* formulaire */
+.contact{
+gap:15px!important;
+}
+.contact input{
+   border-radius: 5px!important;
+   border-color: white!important;
+}
+.contact p{
+   border-color:white!important;
+   border-radius: 5px!important;
+}
+.contacteznous label{
+   text-decoration: none!important;
+}
+.wpcf-form-control{
+   border-color: white!important;
+   border-radius: 5px!important; 
+}
+.contact textarea{
+   border-color:none!important;
+   border-radius:5px!important;
+   resize: none!important;
+}
+.wpcf7-spinner{
+   display: none;
+}
+textarea.wpcf7-form-control{
+   border-radius: 5px!important;
+   resize: none!important;
+   border-color: white!important;
+}
+.boutoncontact{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   margin-bottom: 20px;
+   margin-top: 20px;
+}
+.boutoncontact input{
+background-color: #e0b9b4!important;
+border-radius: 5px!important;
+}
+input .hover{
+Text-Decoration:none!important; 
+} 
+/* image collée au formulaire */
+.wp-image-425{
+   z-index: -1!important;
+}
+
+/* disparition "edit" bas de page */
+
+.entry-footer {
+   display: none!important;
+}
+
+               /* page commander */
+
+.elementor-section.elementor-section-boxed > .elementor-container {
+   gap:15px;
+}
+
+/* formulaire de commande */
+.formulaire-commande-flex{
+display:flex;
+flex-direction: row;
+gap:40px;
+}
+.formulaire-commande-flex input{
+border-color:white!important;
+border-radius: 5px!important;
+}
+.formulaire-commande-flex h4{
+color: white!important;
+}
+.formulaire-commande-flex h3{
+color: white!important;
+}
+.section-info{
+   display:flex!important;
+   flex-direction: column!important;
+   gap:15px;
+   width: 350px;
+}
+.section-livraison{
+   display:flex!important;
+   flex-direction: column!important;
+   gap:15px;
+   width: 350px;
+}
+.deuxcolonnes p{
+   border-radius: 15px!important;
+}
+.colonne1{
+   display:flex!important;
+   flex-direction: column!important;
+}
+.colonne2{
+   display:flex!important;
+   flex-direction: column!important;
+}
