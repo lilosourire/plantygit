@@ -27,3 +27,5 @@ function wpse_add_admin_button_to_menu($items, $args)
     return $items;
 }
 add_filter('wp_nav_menu_items', 'wpse_add_admin_button_to_menu', 10, 2);
+
+add_filter('wpcf7_autop_or_not', '__return_false');

@@ -100,13 +100,13 @@ gap:15px!important;
    margin-top: 20px;
 }
 
-/* image collée au formulaire */
-/* .wp-image-425{
-   z-index: 1!important;
+textarea.wpcf7-form-control{
+   border-color: white!important;
+   border-radius: 5px!important;
+   resize: none!important;
 }
-.wpcf7-form{
-   z-index: 3!important;
-} */
+
+
 
 /* disparition "edit" bas de page */
 
@@ -125,6 +125,10 @@ gap:15px!important;
    flex-direction: column;
 }
 .sectionboutons{
+display: flex!important;
+flex-direction: column!important;
+}
+.boutonsplusmoins{
 
 }
 .boutonplus{ 
@@ -133,8 +137,22 @@ color: red!important;
 .boutonmoins{
 color: blue!important;
 }
+
 .boutonzero{
    
+}
+.zero1{
+
+}
+#boissons{
+
+}
+section.elementor-element:nth-child(4){
+   color:red!important;
+}
+
+#wpcf7-f467-p12-o4 > form:nth-child(2) > div:nth-child(2) > p:nth-child(1) > br:nth-child(3){
+   display: none!important;
 }
 
 /* formulaire de commande */
