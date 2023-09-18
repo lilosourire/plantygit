@@ -64,33 +64,31 @@ gap:15px!important;
    border-radius: 5px!important; 
    resize: none!important;
 }
-.contact .wpcf7-submit{
-   border-color:none!important;
-   border-radius:5px!important;
-   resize: none!important;
-   background: #e0b9b4!important;
-   text-decoration: white!important;
-}
-.contact wpcf7-submit{
-   background-color: blue!important;
-}
 .wpcf7-spinner{
    display: none;
 }
 /* section message */
-.wpcf7-submit{
-   color: #e0b9b4!important;
-   border-radius: 5px!important;
-} 
-/* textarea.wpcf7-form-control{
+
+textarea.wpcf7-form-control{
+   border-color: white!important;
    border-radius: 5px!important;
    resize: none!important;
-   border-color: white!important;
-} */
+}
+/* bouton */
 
 .wpcf7-submit{
-   background: #e0b9b4;
-   text-decoration: white;
+color: white!important;
+   border-radius: 5px!important;
+background-color: #e0b9b4!important;
+   border-color: #e0b9b4!important;
+   resize: none!important;
+   width:50px!important;
+   padding-left: 40px!important;
+   padding-right: 110px!important;
+}
+.wpcf7-submit:hover{
+   color:inherit!important;
+   color: white!important;
 }
 .boutoncontact{
    display: flex;
@@ -100,18 +98,15 @@ gap:15px!important;
    margin-top: 20px;
 }
 
-textarea.wpcf7-form-control{
-   border-color: white!important;
-   border-radius: 5px!important;
-   resize: none!important;
-}
-
-
 
 /* disparition "edit" bas de page */
 
 .entry-footer {
    display: none!important;
+}
+/* canettes */
+.wp-image-56{
+   min-width: 100%;
 }
 
                /* page commander */
@@ -120,6 +115,24 @@ textarea.wpcf7-form-control{
    gap:15px;
 }
 /* boutons au dessus du formulaire */
+
+.elementor-element-d2b26a0{
+   max-width: 700px!important;
+   width: 7000px!important;
+}
+
+/* fraise */
+#wpcf7-f467-o1 > form:nth-child(2) > div:nth-child(2) > input:nth-child(1){
+
+}
+
+#wpcf7-f467-o1 > form:nth-child(2) > div:nth-child(2) > span:nth-child(2) > input:nth-child(1){
+   width: 20px!important;
+}
+/* input number -framboise*/
+.formulaire-commande-flex .elementor-element-e6c879c > div:nth-child(2) > div:nth-child(1) > input:nth-child(2){
+   border-radius: 5px 0px 0px 5px;
+}
 .commandes{
    display: flex;
    flex-direction: column;
@@ -156,6 +169,12 @@ section.elementor-element:nth-child(4){
 }
 
 /* formulaire de commande */
+.formulaire-entier{
+   display: flex;
+   flex-direction: column;
+   gap:15px;
+}
+
 .formulaire-commande-flex{
 display:flex;
 flex-direction: row;
