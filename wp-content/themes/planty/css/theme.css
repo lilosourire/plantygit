@@ -26,6 +26,12 @@ body * {
 body .p {
    text-decoration-color: black;
 }
+/* menu */
+
+.rencontrer{
+
+}
+
 
          /* page 'home' */
 
@@ -60,7 +66,7 @@ gap:15px!important;
 }
 /* section "message" du formulaire  */
 .wpcf-form-control{
-   border-color: white!important;
+   border-color:white!important;
    border-radius: 5px!important; 
    resize: none!important;
 }
@@ -76,26 +82,30 @@ textarea.wpcf7-form-control{
 }
 /* bouton */
 
-.wpcf7-submit{
+.boutoncontact .wpcf7-submit{
 color: white!important;
    border-radius: 5px!important;
-background-color: #e0b9b4!important;
+   background-color: #e0b9b4!important;
    border-color: #e0b9b4!important;
    resize: none!important;
-   width:50px!important;
+   width:70px!important;
    padding-left: 40px!important;
    padding-right: 110px!important;
+   margin-left: 30%!important;
+   margin-right: 30%!important;
+   margin-top: 20px!important;
+   margin-bottom: 20px!important;
 }
-.wpcf7-submit:hover{
-   color:inherit!important;
+.boutoncontact .wpcf7-submit:hover{
+   background-color:#e0b9b4!important;
    color: white!important;
 }
-.boutoncontact{
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   margin-bottom: 20px;
-   margin-top: 20px;
+.contact .boutoncontact{
+   display: flex!important;
+   flex-direction: column!important;
+   align-items: center!important;
+   margin-bottom: 20px!important;
+   margin-top: 20px!important;
 }
 
 
@@ -121,64 +131,91 @@ background-color: #e0b9b4!important;
    width: 7000px!important;
 }
 
-/* fraise */
-#wpcf7-f467-o1 > form:nth-child(2) > div:nth-child(2) > input:nth-child(1){
+/* section boutons sélection */
 
-}
-
-#wpcf7-f467-o1 > form:nth-child(2) > div:nth-child(2) > span:nth-child(2) > input:nth-child(1){
-   width: 20px!important;
-}
-/* input number -framboise*/
-.formulaire-commande-flex .elementor-element-e6c879c > div:nth-child(2) > div:nth-child(1) > input:nth-child(2){
-   border-radius: 5px 0px 0px 5px;
-}
-.commandes{
-   display: flex;
-   flex-direction: column;
-}
-.sectionboutons{
-display: flex!important;
-flex-direction: column!important;
+.sectionraw{
+   display: flex!important;
+   flex-direction: row!important;
 }
 .boutonsplusmoins{
+   display: flex!important;
+   flex-direction: column!important;
+}   
 
+/* fraise */
+/* INPUT */
+.inputnombre input{
+   padding: 0;
+   padding: 10px!important;
+   margin: 0;
+   width: 51px;
+   border-radius: 10px 0 0 10px!important;
+   height: 60px;
+   border-color: white!important;
+   appearance: textfield!important;
 }
-.boutonplus{ 
-color: red!important;
+/* chiffre dans l'input */
+
+
+/* bouton+ */
+
+.boutonsplusmoins .PLUS{
+   width: 44px!important;
+   height: 28px!important;
+background-color: #e0b9b4!important;
+   color:white!important;
+   border-radius: 0 10px 0 0!important;
+   padding: 0;
+border-bottom: white!important;
 }
-.boutonmoins{
-color: blue!important;
+/* hover */
+.PLUS:hover{
+   border-color: #e0b9b4!important;
+}
+/* bouton- */
+.boutonsplusmoins .MOINS{
+   width: 44px!important;
+   height: 32px!important;
+background-color: #e0b9b4!important;
+   color:white!important;
+   border-radius: 0 0 10px 0!important;
+   padding: 0;
+}
+/* hover */
+.MOINS:hover{
+   border-color: #e0b9b4!important;
+}
+   /* bouton ok */ 
+.boutonenvoie{
+   width: 121px!important;
+   height:60px!important;
+   border-radius: 5px!important;
+   color: white!important;
+   background-color:#e0b9b4!important;
+   margin-left: 15px!important;
+}
+/* hover */
+.boutonenvoie input:hover{
+   border-color: #e0b9b4!important;
 }
 
-.boutonzero{
-   
-}
-.zero1{
+/* pamplemousse */
 
-}
-#boissons{
 
-}
-section.elementor-element:nth-child(4){
-   color:red!important;
-}
 
-#wpcf7-f467-p12-o4 > form:nth-child(2) > div:nth-child(2) > p:nth-child(1) > br:nth-child(3){
-   display: none!important;
-}
+      /* formulaire de commande */
 
-/* formulaire de commande */
+/* formulaire en deux colonnes */
 .formulaire-entier{
    display: flex;
    flex-direction: column;
-   gap:15px;
+   gap: 30px!important;
 }
 
 .formulaire-commande-flex{
 display:flex;
 flex-direction: row;
-gap:40px;
+gap:90px;
 }
 .formulaire-commande-flex input{
 border-color:white!important;
@@ -194,13 +231,13 @@ color: white!important;
    display:flex!important;
    flex-direction: column!important;
    gap:15px;
-   width: 350px;
+   width: 550px;
 }
 .section-livraison{
    display:flex!important;
    flex-direction: column!important;
    gap:15px;
-   width: 350px;
+   width: 550px;
 }
 .deuxcolonnes p{
    border-radius: 15px!important;
@@ -213,3 +250,36 @@ color: white!important;
    display:flex!important;
    flex-direction: column!important;
 }
+
+/* bouton commander */
+
+.boutonenv > input:nth-child(1){
+   border-radius: 5px!important;
+   background-color: #e0b9b4!important;
+   color:white!important;
+   margin-left: 30%!important;
+   margin-left: 30%!important;
+   padding-top: 15px!important;
+   margin-top: 50PX!important;
+   padding-left:70px!important;
+   padding-right:70px!important;
+   margin-left:35%!important;
+}
+.boutonenv > input:nth-child(1):hover{
+   background-color:#e0b9b4!important;
+   color: white!important;
+   border-color: #e0b9b4!important;
+}
+
+
+
+
+/* media queries */
+ @media screen and (max-width: 768px){
+
+.formulaire-commande-flex{
+   display:flex;
+   flex-direction:column;
+   gap:40px;
+}
+   }
