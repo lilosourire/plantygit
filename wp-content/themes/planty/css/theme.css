@@ -28,10 +28,10 @@ body .p {
 }
 /* menu */
 
-.rencontrer{
+#menu-1-f466987 > li:nth-child(2) > a:nth-child(1){
+   color:red!important;
 
 }
-
 
          /* page 'home' */
 
@@ -199,10 +199,6 @@ background-color: #e0b9b4!important;
    border-color: #e0b9b4!important;
 }
 
-/* pamplemousse */
-
-
-
       /* formulaire de commande */
 
 /* formulaire en deux colonnes */
@@ -230,13 +226,13 @@ color: white!important;
 .section-info{
    display:flex!important;
    flex-direction: column!important;
-   gap:15px;
+   gap: 35px;
    width: 550px;
 }
 .section-livraison{
    display:flex!important;
    flex-direction: column!important;
-   gap:15px;
+   gap:35px;
    width: 550px;
 }
 .deuxcolonnes p{
@@ -275,11 +271,29 @@ color: white!important;
 
 
 /* media queries */
- @media screen and (max-width: 768px){
+ @media screen and (max-width: 1024px){
 
 .formulaire-commande-flex{
    display:flex;
    flex-direction:column;
    gap:40px;
 }
+.boutonenv > input:nth-child(1){
+   margin-left:18%!important;
+}
+   }
+
+@media screen and (max-width: 360px){
+      .formulaire-commande-flex{
+         display:flex;
+         flex-direction:column;
+         gap:40px;
+         margin-left:0px;
+         padding:0px!important;
+         max-width: 100px!important;
+      }
+      .boutonenv > input:nth-child(1){
+         margin-left:10%!important;
+      }
+   
    }
