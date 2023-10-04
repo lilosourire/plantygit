@@ -60,6 +60,13 @@ header{
    font-family: 'Syne';
    font-style: normal;
  }
+ #menu-navigation-haute{
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   gap: 30%;
+   align-items: center;
+ }
 /* logo */
 .custom-logo{
    width: 200px!important;
@@ -78,7 +85,7 @@ header{
    align-items: center;
    font-family: 'Syne';
    font-style: normal;
-   font-weight: 5;
+   font-weight: 450;
 
  }
 li {
@@ -91,14 +98,17 @@ li {
  }
 /* footer */
 #colophon{
-font-weight: 800;
-/* color: #3B8E46; */
+   background-color: #FFFFFF;
+font-weight: 450;
 display: flex;
 justify-content: center;
 text-decoration: none!important;
 margin-top: 0px;
 margin-bottom: 0px;
 padding-bottom: 0px;
+}
+.site-footer{
+   width: 100%;
 }
 
 /* mise en forme */
@@ -172,6 +182,8 @@ padding-bottom: 0px;
 /* bouton commander */
 
 /* nous rencontrer */
+
+
 
 /* disparition du titre */
 .singular .entry-title {
@@ -257,7 +269,9 @@ textarea.wpcf7-form-control {
 .wp-image-56 {
    min-width: 100%;
 }
-
+.elementor-element-638ac66 > div:nth-child(1){
+   padding-bottom: 0px;
+}
 /* page commander */
 .elementor-section.elementor-section-boxed>.elementor-container {
    gap: 15px;
