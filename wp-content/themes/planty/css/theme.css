@@ -1,12 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;300&family=Syne:wght@800&display=swap' );
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;300&family=Syne:wght@800&display=swap');
+
 /* Import de la font Roboto et Syne depuis Google Fonts et on l'applique sur tous les éléments de la page */
 body * {
    font-family: 'Roboto', sans-serif;
 }
-.h1 h2 h3{
-   font-family: 'Syne', sans-serif!important;
-} 
+/* Import de la font Syne depuis Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Syne&display=swap');
+
+.h1 h2 h3 {
+   font-family: 'Syne', sans-serif !important;
+}
 
 /* La classe 'hover-effect' permettra de créer un effet de zoom quand l'on passera la souris par dessus les elements images enfants  */
 .hover-effect img {
@@ -17,7 +21,7 @@ body * {
    transition: all 0.33s ease-in-out;
    transform: scale(1.05) translateY(-10px);
 }
-#site-header.sticky-top{
+#site-header.sticky-top {
    position: sticky;
    z-index: 10;
    top: 0;
@@ -26,274 +30,446 @@ body * {
 body .p {
    text-decoration-color: black;
 }
+.elementor{
+   min-width: -moz-available;
+}
+header{
+   background-color: white;
+   font-weight: 800;
+   display: flex;
+   flex-direction: row; 
+}
 /* menu */
+.ContenairHeader {
+   width: 100%!important;
+   display: flex;
+   flex-direction: row;
+   align-content: center;
+   align-items: center;
+   justify-content: space-between;
+   margin-left: 50px;
+   margin-right: 0;
+   padding-top:0;
+   padding-bottom:0;
+  } 
+  .entry-content{
+   margin-top: 0px!important;
+  }
+  .LienCommander{
+   color: #FFFFFF;
+   font-family: 'Syne';
+   font-style: normal;
+ }
+/* logo */
+.custom-logo{
+   width: 200px!important;
+ }
+ /* potition logo */
+.site-branding{
+   position: absolute!important;
+   left: 110px!important;
+}
+/* nav */
+.menuNavigation {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   gap: 10%;
+   align-items: center;
+   font-family: 'Syne';
+   font-style: normal;
+   font-weight: 5;
 
-#menu-1-f466987 > li:nth-child(2) > a:nth-child(1){
-   color:red!important;
-
+ }
+li {
+   list-style: none;
+   min-width: 115px;
+  }
+ a {
+   text-decoration: none;
+   color: black;
+ }
+/* footer */
+#colophon{
+font-weight: 800;
+/* color: #3B8E46; */
+display: flex;
+justify-content: center;
+text-decoration: none!important;
+margin-top: 0px;
+margin-bottom: 0px;
+padding-bottom: 0px;
 }
 
-         /* page 'home' */
+/* mise en forme */
 
-.elementor-widget-wrap{
-   padding: 0 !important;
+
+/* bouton commander */
+.DivCommander{
+   background-color: #e0b9b4;
+   color: #FFFFFF!important;
+      height: 50px!important;
+      width: 190px!important;
+      padding-left: 15px;
+      padding-top: 25px;
+      height: 85px!important;
 }
+.Commander {
+   width: 100%;
+   height: 0;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding-top: 25px;
+   padding-bottom: 0;
+ }
+ .textCommander {
 
-         /* nous rencontrer */
+   color: #FFFFFF;
+   text-align: center;
+   font-family: 'Syne';
+   font-style: normal;
+   font-weight: 800;
+ }
+
+/* position éléments menu */
+/* nous rencontrer */
+#menu-item-749{
+   width: 85px;
+ display:ruby;
+}
+/* admin */
+#menu-item-749 li{
+   margin-top: 15px;
+}
+/* bouton commander */
+   .DivCommander {
+      width: 190px;
+    }
+
+/*    width: 100%; */
+
+   .Commander {
+      width: 100%;
+      height: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-top: 25px;
+      padding-bottom: 6.25%;
+    }
+ .textCommander {
+   font-size: 38px;
+   color: #FFFFFF;
+   text-align: center;
+   font-family: 'Syne';
+   font-style: normal;
+   font-weight: 800;
+ }
+
+/* bouton  admin*/
+
+/* bouton commander */
+
+/* nous rencontrer */
 
 /* disparition du titre */
 .singular .entry-title {
-   display: none!important;
+   display: none !important;
+}
+.singular .entry-header {
+   display: none !important;
 }
 
-.singular .entry-header{
-   display: none!important;
-}
 /* formulaire */
-.contact{
-gap:15px!important;
+.contact {
+   gap: 15px !important;
 }
-.contact input{
-   border-radius: 5px!important;
-   border-color: white!important;
+
+.contact input {
+   border-radius: 5px !important;
+   border-color: white !important;
 }
-.contact p{
-   border-color:white!important;
-   border-radius: 5px!important;
+
+.contact p {
+   border-color: white !important;
+   border-radius: 5px !important;
 }
-.contacteznous label{
-   text-decoration: none!important;
+
+.contacteznous label {
+   text-decoration: none !important;
 }
+
 /* section "message" du formulaire  */
-.wpcf-form-control{
-   border-color:white!important;
-   border-radius: 5px!important; 
-   resize: none!important;
+.wpcf-form-control {
+   border-color: white !important;
+   border-radius: 5px !important;
+   resize: none !important;
 }
-.wpcf7-spinner{
+
+.wpcf7-spinner {
    display: none;
 }
+
 /* section message */
 
-textarea.wpcf7-form-control{
-   border-color: white!important;
-   border-radius: 5px!important;
-   resize: none!important;
+textarea.wpcf7-form-control {
+   border-color: white !important;
+   border-radius: 5px !important;
+   resize: none !important;
 }
+
 /* bouton */
 
-.boutoncontact .wpcf7-submit{
-color: white!important;
-   border-radius: 5px!important;
-   background-color: #e0b9b4!important;
-   border-color: #e0b9b4!important;
-   resize: none!important;
-   width:70px!important;
-   padding-left: 40px!important;
-   padding-right: 110px!important;
-   margin-left: 30%!important;
-   margin-right: 30%!important;
-   margin-top: 20px!important;
-   margin-bottom: 20px!important;
-}
-.boutoncontact .wpcf7-submit:hover{
-   background-color:#e0b9b4!important;
-   color: white!important;
-}
-.contact .boutoncontact{
-   display: flex!important;
-   flex-direction: column!important;
-   align-items: center!important;
-   margin-bottom: 20px!important;
-   margin-top: 20px!important;
+.boutoncontact .wpcf7-submit {
+   color: white !important;
+   border-radius: 5px !important;
+   background-color: #e0b9b4 !important;
+   border-color: #e0b9b4 !important;
+   resize: none !important;
+   width: 70px !important;
+   padding-left: 40px !important;
+   padding-right: 110px !important;
+   margin-left: 30% !important;
+   margin-right: 30% !important;
+   margin-top: 20px !important;
+   margin-bottom: 20px !important;
 }
 
+.boutoncontact .wpcf7-submit:hover {
+   background-color: #e0b9b4 !important;
+   color: white !important;
+}
 
+.contact .boutoncontact {
+   display: flex !important;
+   flex-direction: column !important;
+   align-items: center !important;
+   margin-bottom: 20px !important;
+   margin-top: 20px !important;
+}
 /* disparition "edit" bas de page */
-
 .entry-footer {
-   display: none!important;
+   display: none !important;
 }
+
 /* canettes */
-.wp-image-56{
+.wp-image-56 {
    min-width: 100%;
 }
 
-               /* page commander */
-
-.elementor-section.elementor-section-boxed > .elementor-container {
-   gap:15px;
+/* page commander */
+.elementor-section.elementor-section-boxed>.elementor-container {
+   gap: 15px;
 }
+
 /* boutons au dessus du formulaire */
 
-.elementor-element-d2b26a0{
-   max-width: 700px!important;
-   width: 7000px!important;
+.elementor-element-d2b26a0 {
+   max-width: 700px !important;
+   width: 7000px !important;
 }
 
 /* section boutons sélection */
 
-.sectionraw{
-   display: flex!important;
-   flex-direction: row!important;
+.sectionraw {
+   display: flex !important;
+   flex-direction: row !important;
 }
-.boutonsplusmoins{
-   display: flex!important;
-   flex-direction: column!important;
-}   
+
+.boutonsplusmoins {
+   display: flex !important;
+   flex-direction: column !important;
+   gap: 0px !important;
+}
+
+.boutonsplusmoins p {
+   width: 50px !important;
+   gap: 0px !important;
+   display: flex !important;
+   flex-direction: column !important;
+   border-top: white !important;
+}
 
 /* fraise */
 /* INPUT */
-.inputnombre input{
+.inputnombre input {
    padding: 0;
-   padding: 10px!important;
+   padding: 10px !important;
    margin: 0;
    width: 51px;
-   border-radius: 10px 0 0 10px!important;
+   border-radius: 10px 0 0 10px !important;
    height: 60px;
-   border-color: white!important;
-   appearance: textfield!important;
+   border-color: white !important;
+   appearance: textfield !important;
 }
-/* chiffre dans l'input */
-
-
 /* bouton+ */
 
-.boutonsplusmoins .PLUS{
-   width: 44px!important;
-   height: 28px!important;
-background-color: #e0b9b4!important;
-   color:white!important;
-   border-radius: 0 10px 0 0!important;
+.boutonsplusmoins .PLUS {
+   width: 44px !important;
+   height: 28px !important;
+   background-color: #e0b9b4 !important;
+   color: white !important;
+   border-radius: 0 10px 0 0 !important;
    padding: 0;
-border-bottom: white!important;
-}
-/* hover */
-.PLUS:hover{
-   border-color: #e0b9b4!important;
-}
-/* bouton- */
-.boutonsplusmoins .MOINS{
-   width: 44px!important;
-   height: 32px!important;
-background-color: #e0b9b4!important;
-   color:white!important;
-   border-radius: 0 0 10px 0!important;
-   padding: 0;
-}
-/* hover */
-.MOINS:hover{
-   border-color: #e0b9b4!important;
-}
-   /* bouton ok */ 
-.boutonenvoie{
-   width: 121px!important;
-   height:60px!important;
-   border-radius: 5px!important;
-   color: white!important;
-   background-color:#e0b9b4!important;
-   margin-left: 15px!important;
-}
-/* hover */
-.boutonenvoie input:hover{
-   border-color: #e0b9b4!important;
+   border-bottom: white !important;
 }
 
-      /* formulaire de commande */
+/* hover */
+.PLUS:hover {
+   border-color: #e0b9b4 !important;
+}
+
+/* bouton- */
+.boutonsplusmoins .MOINS {
+   width: 44px !important;
+   height: 32px !important;
+   background-color: #e0b9b4 !important;
+   color: white !important;
+   border-radius: 0 0 10px 0 !important;
+   padding: 0;
+}
+
+/* hover */
+.MOINS:hover {
+   border-color: #e0b9b4 !important;
+}
+
+/* bouton ok */
+.boutonenvoie {
+   width: 121px !important;
+   height: 60px !important;
+   border-radius: 5px !important;
+   color: white !important;
+   background-color: #e0b9b4 !important;
+   margin-left: 15px !important;
+}
+/* hover */
+.boutonenvoie input:hover {
+   border-color: #e0b9b4 !important;
+}
+/* formulaire de commande */
 
 /* formulaire en deux colonnes */
-.formulaire-entier{
+.formulaire-entier {
    display: flex;
    flex-direction: column;
-   gap: 30px!important;
+   gap: 30px !important;
+}
+.formulaire-commande-flex {
+   display: flex;
+   flex-direction: row;
+   gap: 90px;
+}
+.formulaire-commande-flex input {
+   border-color: white !important;
+   border-radius: 5px !important;
+}
+.formulaire-commande-flex h4 {
+   color: white !important;
 }
 
-.formulaire-commande-flex{
-display:flex;
-flex-direction: row;
-gap:90px;
+.formulaire-commande-flex h3 {
+   color: white !important;
 }
-.formulaire-commande-flex input{
-border-color:white!important;
-border-radius: 5px!important;
-}
-.formulaire-commande-flex h4{
-color: white!important;
-}
-.formulaire-commande-flex h3{
-color: white!important;
-}
-.section-info{
-   display:flex!important;
-   flex-direction: column!important;
+
+.section-info {
+   display: flex !important;
+   flex-direction: column !important;
    gap: 35px;
    width: 550px;
 }
-.section-livraison{
-   display:flex!important;
-   flex-direction: column!important;
-   gap:35px;
+
+.section-livraison {
+   display: flex !important;
+   flex-direction: column !important;
+   gap: 35px;
    width: 550px;
 }
-.deuxcolonnes p{
-   border-radius: 15px!important;
-}
-.colonne1{
-   display:flex!important;
-   flex-direction: column!important;
-}
-.colonne2{
-   display:flex!important;
-   flex-direction: column!important;
+
+.deuxcolonnes p {
+   border-radius: 15px !important;
 }
 
+.colonne1 {
+   display: flex !important;
+   flex-direction: column !important;
+}
+
+.colonne2 {
+   display: flex !important;
+   flex-direction: column !important;
+}
 /* bouton commander */
-
-.boutonenv > input:nth-child(1){
-   border-radius: 5px!important;
-   background-color: #e0b9b4!important;
-   color:white!important;
-   margin-left: 30%!important;
-   margin-left: 30%!important;
-   padding-top: 15px!important;
-   margin-top: 50PX!important;
-   padding-left:70px!important;
-   padding-right:70px!important;
-   margin-left:35%!important;
+.boutonenv input {
+   border-radius: 5px !important;
+   background-color: #e0b9b4 !important;
+   color: white !important;
+   margin-left: 30% !important;
+   margin-left: 30% !important;
+   padding-top: 15px !important;
+   margin-top: 50PX !important;
+   padding-left: 70px !important;
+   padding-right: 70px !important;
+   margin-left: 35% !important;
 }
-.boutonenv > input:nth-child(1):hover{
-   background-color:#e0b9b4!important;
-   color: white!important;
-   border-color: #e0b9b4!important;
+.boutonenv input:hover {
+   background-color: #e0b9b4 !important;
+   color: white !important;
+   border-color: #e0b9b4 !important;
 }
 
-
+/* ---------------------------- */
 
 
 /* media queries */
- @media screen and (max-width: 1024px){
+@media screen and (max-width: 1024px) {
 
-.formulaire-commande-flex{
-   display:flex;
-   flex-direction:column;
-   gap:40px;
-}
-.boutonenv > input:nth-child(1){
-   margin-left:18%!important;
-}
+   .formulaire-commande-flex {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
    }
 
-@media screen and (max-width: 360px){
-      .formulaire-commande-flex{
-         display:flex;
-         flex-direction:column;
-         gap:40px;
-         margin-left:0px;
-         padding:0px!important;
-         max-width: 100px!important;
-      }
-      .boutonenv > input:nth-child(1){
-         margin-left:10%!important;
-      }
-   
+   .boutonenv>input:nth-child(1) {
+      margin-left: 18% !important;
    }
+}
+@media screen and (max-width: 360px) {
+   .formulaire-commande-flex {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      margin-left: 0px;
+      padding: 0px !important;
+      max-width: 100px !important;
+   }
+   .boutonenv>input:nth-child(1) {
+      margin-left: 10% !important;
+   }
+
+}
+ @media screen and (max-width: 825px) {
+
+   .ContenairHeader {
+         display: flex!important;
+         flex-direction: column!important;
+         align-items: flex-start!important;
+         margin: 0!important;
+         padding-top: 10px!important;
+       }
+       #menu-navigation-haute{
+         padding-left: 0px!important;
+       }
+       .menuNavigation{
+         display: flex!important;
+         flex-direction: column!important;
+         gap: 0px!important;
+         margin-left: 0px!important;
+         align-items: flex-start!important;
+       }
+       .DivCommander {
+         height: 50px;
+         width: 190px;
+       }
+      } 

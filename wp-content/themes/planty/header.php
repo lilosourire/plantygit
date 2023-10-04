@@ -25,17 +25,30 @@
 
 <body <?php body_class(); ?>>
 	<?php wp_body_open(); ?>
-	<header id="site-header" class="header-footer-group sticky_top"></header>
-	<div id="page" class="site">
-		<a class="skip-link screen-reader-text" href="#content">
-			<?php
-			/* translators: Hidden accessibility text. */
-			esc_html_e('Skip to content', 'twentytwentyone');
-			?>
-		</a>
 
-		<?php get_template_part('template-parts/header/site-header'); ?>
+	<header>
 
-		<div id="content" class="site-content">
-			<div id="primary" class="content-area">
-				<main id="main" class="site-main">
+		<div class="ContenairHeader">
+			<div>
+				<?php the_custom_logo(); ?>
+			</div>
+
+			<nav class="menuNavigation">
+
+				<?php
+				wp_nav_menu(
+					array(
+						'theme_location' => 'primary',
+						'container'      => 'false',
+						'menu_class'     => 'cssHeader',
+					)
+				);
+				?>
+
+				<div class="DivCommander">
+					<a href="http://planty.local/commander/" class="LienCommander"> Commander </a>
+				</div>
+
+			</nav><!-- #site-navigation -->
+		</div>
+	</header><!-- #masthead -->

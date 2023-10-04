@@ -8,14 +8,16 @@ function theme_enqueue_styles()
 /* hook du menu */
 
 
-/* function is_user_logged_in()
+
+/* function display_theme_locations()
 {
-    $user = wp_get_current_user();
+    $theme_locations = get_nav_menu_locations();
 
-    return $user->exists();
+    // Afficher les emplacements des menus
+    foreach ($theme_locations as $location => $menu_id) {
+        echo 'Emplacement : ' . $location . '<br>';
+    }
 }
- */
-
 function wpse_add_admin_button_to_menu($items, $args)
 {
     // Vérification que l'utilisateur est connecté
@@ -36,4 +38,18 @@ function prefix_add_menu_item($items, $args)
 
     return $items;
 }
-add_filter('wp_nav_menu', 'prefix_add_menu_item', 10, 2);
+add_filter('wp_nav_menu', 'prefix_add_menu_item', 10, 2); */
+
+
+
+// Le hook pour ajouter le lien admin dans le menu
+add_filter('wp_nav_menu_items', 'menu_admin', 10, 2);
+function menu_admin($menu_items, $args)
+{
+    if ($args->theme_location == 'primary') {
+        if (is_user_logged_in()) {
+            $menu_items .= '<li><a href="http://planty.local/admin/">' . __("Admin") . '</a></li>';
+        }
+    }
+    return $menu_items;
+}
