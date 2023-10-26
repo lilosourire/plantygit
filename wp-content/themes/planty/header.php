@@ -27,7 +27,6 @@
 	<?php wp_body_open(); ?>
 
 	<header>
-
 		<div class="ContenairHeader">
 			<div>
 				<?php the_custom_logo(); ?>

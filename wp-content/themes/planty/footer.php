@@ -13,6 +13,7 @@
  */
 
 ?>
+
 <footer id="colophon" class="site-footer">
 	<?php
 	wp_nav_menu(
@@ -35,6 +36,7 @@ function display_theme_locations()
 	}
 } ?>
 </div><!-- #page -->
+<?php wp_footer(); ?>
 </body>
 
 </html>

@@ -48,7 +48,7 @@ header{
    align-items: center;
    justify-content: space-between;
    margin-left: 50px;
-   margin-right: 0;
+   margin-right: 0px!important;
    padding-top:0;
    padding-bottom:0;
   } 
@@ -64,8 +64,10 @@ header{
    display: flex;
    flex-direction: row;
    justify-content: space-between;
-   gap: 30%;
+   gap: 40%;
    align-items: center;
+   padding-right: 100px;
+   padding-left: 20px;
  }
 /* logo */
 .custom-logo{
@@ -81,13 +83,19 @@ header{
    display: flex;
    flex-direction: row;
    justify-content: space-between;
-   gap: 10%;
+/*    gap: 10%; */
    align-items: center;
    font-family: 'Syne';
    font-style: normal;
    font-weight: 450;
+/*    width: 450px!important; */
+ padding-right: 0px;
+}
 
- }
+.menuNavigation a{
+   display:-webkit-inline-box;
+}
+
 li {
    list-style: none;
    min-width: 115px;
@@ -95,8 +103,34 @@ li {
  a {
    text-decoration: none;
    color: black;
+   inline-size: max-content;
  }
+
+ /* bouton commander page d'accueil */
+ .elementor-button{
+   width: 250px!important;
+/*    margin-right: 5%!important; */
+ }
+
 /* footer */
+.elementor-element-14fba1e > div:nth-child(1){
+   padding:0px !important;
+}
+.elementor-element-14fba1e > div:nth-child(2){
+   padding:0px !important;
+}
+.entry-content{
+   margin-bottom: 0!important;
+}
+.attachment-full{
+   margin-bottom: 10px;
+}
+#menu-footer{
+   margin-top: 25px!important;
+   margin-bottom: 30px!important;
+   padding-left: 0px!important;
+}
+
 #colophon{
    background-color: #FFFFFF;
 font-weight: 450;
@@ -106,6 +140,12 @@ text-decoration: none!important;
 margin-top: 0px;
 margin-bottom: 0px;
 padding-bottom: 0px;
+min-width: -webkit-fill-available;
+min-width: -moz-available!important;
+height:80px!important;
+}
+#post-10 > div > div > section.elementor-section.elementor-top-section.elementor-element.elementor-element-5c4fa28.elementor-section-stretched.elementor-section-full_width.elementor-section-height-default.elementor-section-height-default > div > div > div{
+   padding: 0px!important;
 }
 .site-footer{
    width: 100%;
@@ -116,13 +156,13 @@ padding-bottom: 0px;
 
 /* bouton commander */
 .DivCommander{
-   background-color: #e0b9b4;
+   background-color: #dc9f96;
    color: #FFFFFF!important;
-      height: 50px!important;
-      width: 190px!important;
-      padding-left: 15px;
+      width: 300px!important;
+/*       padding-left: 15px; */
       padding-top: 25px;
-      height: 85px!important;
+      height: 84px!important;
+      text-align: center;
 }
 .Commander {
    width: 100%;
@@ -152,13 +192,6 @@ padding-bottom: 0px;
 #menu-item-749 li{
    margin-top: 15px;
 }
-/* bouton commander */
-   .DivCommander {
-      width: 190px;
-    }
-
-/*    width: 100%; */
-
    .Commander {
       width: 100%;
       height: 0;
@@ -177,14 +210,6 @@ padding-bottom: 0px;
    font-weight: 800;
  }
 
-/* bouton  admin*/
-
-/* bouton commander */
-
-/* nous rencontrer */
-
-
-
 /* disparition du titre */
 .singular .entry-title {
    display: none !important;
@@ -192,73 +217,92 @@ padding-bottom: 0px;
 .singular .entry-header {
    display: none !important;
 }
-
-/* formulaire */
-.contact {
-   gap: 15px !important;
+/* image plante */
+#post-10 > div > div > section.elementor-section.elementor-top-section.elementor-element.elementor-element-c280be2.elementor-section-stretched.elementor-section-boxed.elementor-section-height-default.elementor-section-height-default > div > div > div > div > div{
+   max-width: 261px!important;
 }
+/* formulaire */
 
+.elementor-element-a6cf52a > div:nth-child(1) > h2:nth-child(1){
+   font-weight: bold;
+   font-size: revert-layer;
+}
+.contact {
+   gap: 35px !important;
+  display: flex;
+  flex-direction: column;
+}
+.contact h4 {
+   font-weight: lighter!important;
+   padding-bottom: 15px!important;
+}
 .contact input {
    border-radius: 5px !important;
    border-color: white !important;
 }
-
 .contact p {
    border-color: white !important;
    border-radius: 5px !important;
 }
-
 .contacteznous label {
    text-decoration: none !important;
 }
-
 /* section "message" du formulaire  */
+.texte h4 {
+   font-weight: lighter!important;
+}
+.message {
+   font-weight: lighter!important;
+}
+
 .wpcf-form-control {
    border-color: white !important;
    border-radius: 5px !important;
    resize: none !important;
+   width: 500px!important;
 }
-
 .wpcf7-spinner {
    display: none;
 }
-
 /* section message */
-
 textarea.wpcf7-form-control {
    border-color: white !important;
    border-radius: 5px !important;
    resize: none !important;
-}
+   width: 455px!important;
+   border:none
 
+}
 /* bouton */
-
-.boutoncontact .wpcf7-submit {
-   color: white !important;
-   border-radius: 5px !important;
-   background-color: #e0b9b4 !important;
-   border-color: #e0b9b4 !important;
-   resize: none !important;
-   width: 70px !important;
-   padding-left: 40px !important;
-   padding-right: 110px !important;
-   margin-left: 30% !important;
-   margin-right: 30% !important;
-   margin-top: 20px !important;
-   margin-bottom: 20px !important;
-}
-
 .boutoncontact .wpcf7-submit:hover {
    background-color: #e0b9b4 !important;
    color: white !important;
+   border-radius: 5px !important;
+   border-color: #e0b9b4 !important;
 }
+.wpcf7-submit{
+   background-color: #e0b9b4!important;
+  color: white !important;
+  width: 250px !important;
+  border-radius: 5px !important;
+}
+
+.boutoncontact{
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      margin-bottom: 100px !important;
+      margin-top: 48px !important;
+      width: 450px!important;
+   }
 
 .contact .boutoncontact {
    display: flex !important;
    flex-direction: column !important;
    align-items: center !important;
-   margin-bottom: 20px !important;
-   margin-top: 20px !important;
+   margin-bottom: 100px !important;
+   margin-top: 48px !important;
+   margin-left: 15%!important;
 }
 /* disparition "edit" bas de page */
 .entry-footer {
@@ -271,6 +315,9 @@ textarea.wpcf7-form-control {
 }
 .elementor-element-638ac66 > div:nth-child(1){
    padding-bottom: 0px;
+}
+#post-10 > div > div > section.elementor-section.elementor-top-section.elementor-element.elementor-element-5c4fa28.elementor-section-stretched.elementor-section-full_width.elementor-section-height-default.elementor-section-height-default > div > div > div > div{
+   padding-bottom: 10px!important;
 }
 /* page commander */
 .elementor-section.elementor-section-boxed>.elementor-container {
@@ -289,6 +336,7 @@ textarea.wpcf7-form-control {
 .sectionraw {
    display: flex !important;
    flex-direction: row !important;
+   margin-top: 15px;
 }
 
 .boutonsplusmoins {
@@ -305,28 +353,31 @@ textarea.wpcf7-form-control {
    border-top: white !important;
 }
 
-/* fraise */
 /* INPUT */
 .inputnombre input {
    padding: 0;
    padding: 10px !important;
    margin: 0;
-   width: 51px;
+   width: 52px;
    border-radius: 10px 0 0 10px !important;
    height: 60px;
    border-color: white !important;
    appearance: textfield !important;
+}
+.inputnombre{
+   width: 52px!important;
 }
 /* bouton+ */
 
 .boutonsplusmoins .PLUS {
    width: 44px !important;
    height: 28px !important;
-   background-color: #e0b9b4 !important;
+   background-color:#dc9f96 !important;
    color: white !important;
    border-radius: 0 10px 0 0 !important;
    padding: 0;
-   border-bottom: white !important;
+   border-bottom: 1px solid white !important;
+   
 }
 
 /* hover */
@@ -338,7 +389,7 @@ textarea.wpcf7-form-control {
 .boutonsplusmoins .MOINS {
    width: 44px !important;
    height: 32px !important;
-   background-color: #e0b9b4 !important;
+   background-color:#dc9f96 !important;
    color: white !important;
    border-radius: 0 0 10px 0 !important;
    padding: 0;
@@ -348,7 +399,7 @@ textarea.wpcf7-form-control {
 .MOINS:hover {
    border-color: #e0b9b4 !important;
 }
-
+/* ensemble bouton+,-,input */
 /* bouton ok */
 .boutonenvoie {
    width: 121px !important;
@@ -357,6 +408,8 @@ textarea.wpcf7-form-control {
    color: white !important;
    background-color: #e0b9b4 !important;
    margin-left: 15px !important;
+   padding-top: 10px!important;
+   padding-bottom: 25px!important;
 }
 /* hover */
 .boutonenvoie input:hover {
@@ -381,10 +434,13 @@ textarea.wpcf7-form-control {
 }
 .formulaire-commande-flex h4 {
    color: white !important;
+   font-weight: 200!important;
+   margin-bottom: 20px!important;
 }
 
 .formulaire-commande-flex h3 {
    color: white !important;
+
 }
 
 .section-info {
@@ -423,9 +479,9 @@ textarea.wpcf7-form-control {
    margin-left: 30% !important;
    padding-top: 15px !important;
    margin-top: 50PX !important;
-   padding-left: 70px !important;
-   padding-right: 70px !important;
-   margin-left: 35% !important;
+   padding-left: 38px !important;
+   padding-right: 38px !important;
+   margin-left: 38% !important;
 }
 .boutonenv input:hover {
    background-color: #e0b9b4 !important;
@@ -449,7 +505,7 @@ textarea.wpcf7-form-control {
       margin-left: 18% !important;
    }
 }
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 390px) {
    .formulaire-commande-flex {
       display: flex;
       flex-direction: column;
@@ -461,7 +517,9 @@ textarea.wpcf7-form-control {
    .boutonenv>input:nth-child(1) {
       margin-left: 10% !important;
    }
-
+   textarea.wpcf7-form-control{
+      width: 340px!important;
+   }
 }
  @media screen and (max-width: 825px) {
 
@@ -469,21 +527,38 @@ textarea.wpcf7-form-control {
          display: flex!important;
          flex-direction: column!important;
          align-items: flex-start!important;
-         margin: 0!important;
+         margin-left: auto!important;
+         margin-right: auto;
          padding-top: 10px!important;
+         gap:25px!important;
+       }
+       /* logo */
+       .ContenairHeader > div:nth-child(1){
+         margin-left: auto!important;
+         margin-right: auto!important;
        }
        #menu-navigation-haute{
          padding-left: 0px!important;
+         display: flex;
+         flex-direction: column;
+         gap:25px;
+         margin-bottom: 25px;
+ /*      padding-left: 15px; */
+         padding-right: 0px;
+         margin-left: auto!important;
+         margin-right: auto!important;
+         text-align: center;
        }
        .menuNavigation{
          display: flex!important;
          flex-direction: column!important;
          gap: 0px!important;
-         margin-left: 0px!important;
+         margin-left: auto!important;
+         margin-right: auto!important;
          align-items: flex-start!important;
        }
        .DivCommander {
-         height: 50px;
-         width: 190px;
+         height: 59px;
+         width: 210px!important;
        }
       } 
