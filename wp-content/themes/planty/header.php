@@ -27,12 +27,12 @@
 	<?php wp_body_open(); ?>
 
 	<header>
-		<div class="ContenairHeader">
+		<div class="SectionHeader">
 			<div>
 				<?php the_custom_logo(); ?>
 			</div>
 
-			<nav class="menuNavigation">
+			<nav class="NavigationMenu">
 
 				<?php
 				wp_nav_menu(
@@ -44,7 +44,7 @@
 				);
 				?>
 
-				<div class="DivCommander">
+				<div class="SectionCommander">
 					<a href="http://planty.local/commander/" class="LienCommander"> Commander </a>
 				</div>
 
