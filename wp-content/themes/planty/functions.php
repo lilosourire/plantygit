@@ -43,7 +43,7 @@ add_filter('wp_nav_menu', 'prefix_add_menu_item', 10, 2); */
 
 
 // Le hook pour ajouter le lien admin dans le menu
-add_filter('wp_nav_menu_items', 'menu_admin', 10, 2);
+/* add_filter('wp_nav_menu_items', 'menu_admin', 10, 2);
 function menu_admin($menu_items, $args)
 {
     if ($args->theme_location == 'primary') {
@@ -52,4 +52,42 @@ function menu_admin($menu_items, $args)
         }
     }
     return $menu_items;
+}
+ */
+
+// Le hook pour ajouter le lien admin dans le menu
+/* add_filter('wp_nav_menu_items', 'menu_admin', 10, 2);
+function menu_admin($menu_items, $args)
+{
+    if ($args->theme_location == 'primary') {
+        if (is_user_logged_in()) {
+            $menu_items .= '<li><a href="' . get_site_url() . '/wp-admin/">' . __("Admin") . '</a></li>';
+        }
+    }
+    return $menu_items;
+}
+ */
+
+// Le hook pour ajouter le lien admin dans le menu -version définitive -
+add_filter('wp_nav_menu_items', 'menu_admin', 10, 2);
+function menu_admin($menu_items, $args)
+{
+    //Créaation d'une nouvelle variable pour le menu
+    $new_menu_items = "";
+
+    if ($args->theme_location == 'primary') {
+        if (is_user_logged_in()) {
+
+
+            $items_array = explode('</li>', $menu_items);
+            foreach ($items_array as $key => $value) {
+                if ($key == 0) {
+                    $new_menu_items .= $value . '<li><a href="' . get_site_url() . '/wp-admin/">' . __("Admin") . '</a></li>';
+                } else {
+                    $new_menu_items .= $value;
+                }
+            }
+        }
+    }
+    return $new_menu_items;
 }

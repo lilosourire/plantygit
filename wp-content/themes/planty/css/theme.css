@@ -366,11 +366,44 @@ textarea.wpcf7-form-control {
    gap: 15px;
 }
 
-/* boutons au dessus du formulaire */
+.fraise{
 
-.elementor-element-d2b26a0 {
-   max-width: 700px !important;
-   width: 7000px !important;
+}
+.input-fraise{
+border-color: #FFFFFF!important;
+width: 40px!important;
+resize: none !important;
+appearance: textfield !important;
+margin-bottom: 15px!important;
+}
+.pamplemousse{
+
+}
+.input-pamplemousse{
+   border-color: #FFFFFF!important;
+   width: 40px!important;
+   resize: none !important;
+   appearance: textfield !important;
+}
+
+.framboise{
+
+}
+.input-framboise{
+   border-color: #FFFFFF!important;
+   width: 40px!important;
+   resize: none !important;
+   appearance: textfield !important;
+}
+
+.citron{
+
+}
+.input-citron{
+   border-color: #FFFFFF!important;
+   width: 40px!important;
+   resize: none !important;
+   appearance: textfield !important;
 }
 
 /* section boutons sélection */
@@ -379,6 +412,7 @@ textarea.wpcf7-form-control {
    display: flex !important;
    flex-direction: row !important;
    margin-top: 15px;
+   justify-content: space-around!important;
 }
 
 .boutonsplusmoins {
@@ -400,17 +434,17 @@ textarea.wpcf7-form-control {
    padding: 0;
    padding: 10px !important;
    margin: 0;
-   width: 52px;
-   border-radius: 10px 0 0 10px !important;
+   width: 40px;
    height: 60px;
    border-color: white !important;
    appearance: textfield !important;
+   margin-right: 30%!important;
 }
 
-.inputnombre {
+/* .inputnombre {
    width: 52px !important;
 }
-
+ */
 /* bouton+ */
 
 .boutonsplusmoins .PLUS {
