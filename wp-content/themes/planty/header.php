@@ -44,9 +44,9 @@
 				);
 				?>
 
-				<div class="SectionCommander">
+				<!-- <div class="SectionCommander">
 					<a href="http://planty.local/commander/" class="LienCommander"> Commander </a>
-				</div>
+				</div> -->
 
 			</nav><!-- #site-navigation -->
 		</div>

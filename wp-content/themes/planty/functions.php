@@ -73,21 +73,23 @@ add_filter('wp_nav_menu_items', 'menu_admin', 10, 2);
 function menu_admin($menu_items, $args)
 {
     //Créaation d'une nouvelle variable pour le menu
-    $new_menu_items = "";
+    if ($args->theme_location == 'primary' && is_user_logged_in()) {
 
-    if ($args->theme_location == 'primary') {
-        if (is_user_logged_in()) {
+        $new_menu_items = "";
 
-
-            $items_array = explode('</li>', $menu_items);
-            foreach ($items_array as $key => $value) {
-                if ($key == 0) {
-                    $new_menu_items .= $value . '<li><a href="' . get_site_url() . '/wp-admin/">' . __("Admin") . '</a></li>';
-                } else {
-                    $new_menu_items .= $value;
-                }
+        $items_array = explode('</li>', $menu_items);
+        foreach ($items_array as $key => $value) {
+            if ($key == 0) {
+                $new_menu_items .= $value . '<li><a href="' . get_site_url() . '/wp-admin/">' . __("Admin") . '</a></li>';
+            } else if ($key == 1) {
+                $value = str_replace('<a', '<a style="top: 32px;"', $value);
+                $new_menu_items .= $value;
+            } else {
+                $new_menu_items .= $value;
             }
         }
+        return $new_menu_items;
     }
-    return $new_menu_items;
+
+    return $menu_items;
 }
