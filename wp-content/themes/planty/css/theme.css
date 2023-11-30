@@ -264,6 +264,12 @@ a {
 .singular .entry-header {
    display: none !important;
 }
+/* AJOUT BANDE ARRONDIE MARRON+OMBRE */
+#post-98 > div > div > section.elementor-section.elementor-top-section.elementor-element.elementor-element-8fd5d74.elementor-section-full_width.elementor-section-stretched.elementor-section-height-default.elementor-section-height-default > div > div > div > div > div > img{
+
+
+}
+
 
 /* image plante */
 #post-10>div>div>section.elementor-section.elementor-top-section.elementor-element.elementor-element-c280be2.elementor-section-stretched.elementor-section-boxed.elementor-section-height-default.elementor-section-height-default>div>div>div>div>div {
@@ -455,7 +461,16 @@ margin-bottom: 15px!important;
    border-width:0;
    color:white;
    background-color:white;
-   width: 95%;
+   width: 100%;
+}
+
+.section-image.row{
+   display: flex;
+   justify-content: space-between;
+}
+
+.section-image .col{
+   width: 22.5%;
 }
 
 /* INPUT */
@@ -542,18 +557,25 @@ margin-bottom: 15px!important;
    display: flex;
    flex-direction: column;
    gap: 30px !important;
-   width: fit-content!important;
--webkit-margin-inline-start: -95%;
--webkit-margin-start: -94%;
-appearance: textfield !important;
--moz-margin-start: -8% !important;
-margin-left: 10px!important;
 }
 
-.formulaire-commande-flex {
+.formulaire-commande-flex.row{
    display: flex;
-   flex-direction: row;
-   gap: 90px;
+   justify-content: center;
+}
+
+.col.ligne-verticale {
+   margin: 42px;
+   margin-top: 0;
+   margin-bottom: 0;
+   width: 2px;
+   height: 380px;
+   background-color: white;
+}
+
+
+.formulaire-commande-flex .col {
+   /* margin-left: 15px; */
 }
 
 .formulaire-commande-flex input {
@@ -613,11 +635,6 @@ margin-left: 10px!important;
    -webkit-margin-start: 30%!important;
 
 }
-#wpcf7-f398-p12-o5 > form > div.formulaire-entier{
-   -webkit-margin-start: -41%!important;
-}
-.input-citron
-
 .boutonenv input:hover {
    background-color: #e0b9b4 !important;
    color: white !important;
@@ -810,15 +827,15 @@ margin-left: 10px!important;
    top: 0!important;
    right: 0;
 }
-/* 
+ 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
-} */
-
+}
+/*
 .input-citron{
   -webkit-appearance: none;
    margin: 0;
    -moz-appearance: textfield !important; 
-}
+}*/
