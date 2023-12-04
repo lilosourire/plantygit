@@ -134,7 +134,11 @@ a {
    width: 250px !important;
    /*    margin-right: 5%!important; */
 }
-
+/* section arrondie bas de la canette */
+#post-98 > div > div > section.elementor-section.elementor-top-section.elementor-element.elementor-element-8fd5d74.elementor-section-full_width.elementor-section-stretched.elementor-section-height-default.elementor-section-height-default > div > div > div > div > div > img{
+   width: 100%;
+   max-width: none!important;
+}
 
 /* footer */
 .elementor-element-14fba1e>div:nth-child(1) {
@@ -393,6 +397,9 @@ textarea.wpcf7-form-control {
    gap: 15px;
 }
 
+/* images */
+
+
 .fraise{
 
 }
@@ -569,18 +576,23 @@ margin-bottom: 15px!important;
    margin-top: 0;
    margin-bottom: 0;
    width: 2px;
-   height: 380px;
+   height: 490px;
    background-color: white;
 }
 
+/* modification des input texte */
 
 .formulaire-commande-flex .col {
-   /* margin-left: 15px; */
+display: flex!important;
+flex-direction: column;
+gap:20px!important;
 }
 
 .formulaire-commande-flex input {
    border-color: white !important;
    border-radius: 5px !important;
+   width: 530px;
+   height: 71px;
 }
 
 .formulaire-commande-flex h4 {
@@ -591,6 +603,7 @@ margin-bottom: 15px!important;
 
 .formulaire-commande-flex h3 {
    color: white !important;
+font-size: xxx-large;
 
 }
 
@@ -632,7 +645,7 @@ margin-bottom: 15px!important;
    padding-left: 48px !important;
    padding-right: 38px !important;
    margin-left: 40%!important;
-   -webkit-margin-start: 30%!important;
+   -webkit-margin-start: 39%!important;
 
 }
 .boutonenv input:hover {
