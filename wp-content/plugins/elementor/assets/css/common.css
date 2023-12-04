@@ -1,4 +1,4 @@
-/*! elementor - v3.16.0 - 20-09-2023 */
+/*! elementor - v3.18.0 - 04-12-2023 */
 .dialog-widget-content {
   background-color: var(--e-a-bg-default);
   position: absolute;
@@ -523,7 +523,7 @@
   width: 650px;
   max-width: 98%;
   top: 18vh;
-  left: calc( 50% - 650px / 2 );
+  left: calc(50% - 650px / 2);
 }
 #elementor-finder__modal .dialog-content {
   text-align: start;

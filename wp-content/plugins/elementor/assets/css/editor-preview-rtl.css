@@ -1,4 +1,4 @@
-/*! elementor - v3.16.0 - 20-09-2023 */
+/*! elementor - v3.18.0 - 04-12-2023 */
 .dialog-widget-content {
   background-color: var(--e-a-bg-default);
   position: absolute;
@@ -842,7 +842,7 @@ body:not(.elementor-device-mobile) .elementor-control.elementor-control-responsi
   position: relative;
   width: 2.5em;
   height: 2.5em;
-  margin: calc( -2.5em + 12px) 0;
+  margin: calc(-2.5em + 12px) 0;
   margin-inline-end: 5px;
 }
 .elementor-control-responsive-switchers__holder {
@@ -1160,7 +1160,7 @@ body:not(.elementor-device-mobile) .elementor-control.elementor-control-responsi
   position: relative;
   width: 2.5em;
   height: 2.5em;
-  margin: calc( -2.5em + 12px) 0;
+  margin: calc(-2.5em + 12px) 0;
   margin-inline-end: 5px;
 }
 .elementor-control-responsive-switchers__holder {
@@ -1444,7 +1444,7 @@ body:not(.elementor-device-mobile) .elementor-control.elementor-control-responsi
   position: relative;
   width: 2.5em;
   height: 2.5em;
-  margin: calc( -2.5em + 12px) 0;
+  margin: calc(-2.5em + 12px) 0;
   margin-inline-end: 5px;
 }
 .elementor-control-responsive-switchers__holder {
@@ -1971,7 +1971,7 @@ body:not(.elementor-device-mobile) .elementor-control.elementor-control-responsi
 .e-global__color-preview-transparent-bg {
   background-image: linear-gradient(45deg, var(--e-a-border-color-bold) 25%, transparent 0, transparent 75%, var(--e-a-border-color-bold) 0, var(--e-a-border-color-bold)), linear-gradient(45deg, var(--e-a-border-color-bold) 25%, transparent 0, transparent 75%, var(--e-a-border-color-bold) 0, var(--e-a-border-color-bold));
   background-size: 12px 12px;
-  background-position: 0 0, calc( 12px / 2 ) calc( 12px / 2 );
+  background-position: 0 0, calc(12px / 2) calc(12px / 2);
 }
 .e-global__color-title {
   flex-grow: 1;
@@ -2107,7 +2107,7 @@ body:not(.elementor-device-mobile) .elementor-control.elementor-control-responsi
 .elementor-control-media-area {
   background-image: linear-gradient(45deg, var(--e-a-border-color-bold) 25%, transparent 0, transparent 75%, var(--e-a-border-color-bold) 0, var(--e-a-border-color-bold)), linear-gradient(45deg, var(--e-a-border-color-bold) 25%, transparent 0, transparent 75%, var(--e-a-border-color-bold) 0, var(--e-a-border-color-bold));
   background-size: 16px 16px;
-  background-position: 0 0, calc( 16px / 2 ) calc( 16px / 2 );
+  background-position: 0 0, calc(16px / 2) calc(16px / 2);
   background-color: var(--e-a-bg-default);
   border: var(--e-a-border-bold);
   aspect-ratio: 21/9;
@@ -3142,23 +3142,23 @@ body:not(.elementor-device-mobile) .elementor-control.elementor-control-responsi
   display: flex;
   outline: none;
   border: none;
-  background-color: var(--e-a-btn-bg);
-  color: var(--e-a-btn-color-invert);
+  background-color: var(--e-a-bg-active);
+  color: var(--e-a-color-black);
   transition: var(--e-a-transition-hover);
   cursor: pointer;
 }
 .elementor-add-section-area-button:hover {
-  background-color: var(--e-a-btn-bg-hover);
-  color: var(--e-a-btn-color-invert);
+  background-color: var(--e-a-bg-active-bold);
+  color: var(--e-a-color-black);
 }
 .elementor-add-section-area-button i {
   margin: 0;
 }
-.elementor-add-section-area-button.elementor-add-section-button {
+.elementor-add-section-area-button.e-button-primary {
   background-color: var(--e-a-btn-bg-primary);
   color: var(--e-a-btn-color);
 }
-.elementor-add-section-area-button.elementor-add-section-button:hover {
+.elementor-add-section-area-button.e-button-primary:hover {
   background-color: var(--e-a-btn-bg-primary-hover);
   color: var(--e-a-btn-color);
 }
@@ -4214,6 +4214,69 @@ html.elementor-html {
 }
 .elementor-editor-widget-settings .elementor-editor-element-setting:hover {
   background-color: var(--e-p-border-widget-hover);
+}
+
+.e-widget-pro-promotion .elementor-widget-container {
+  border: 2px dashed var(--e-a-border-color-bold);
+  background-color: var(--e-a-color-white);
+  padding: 20px;
+}
+.e-widget-pro-promotion .e-container {
+  max-width: 600px;
+  margin: auto;
+}
+.e-widget-pro-promotion .e-badge {
+  border: 1px solid var(--e-a-color-accent);
+  color: var(--e-a-color-accent);
+  background: var(--e-a-color-white);
+  border-radius: 100px;
+  padding: 4px 12px;
+  font-size: 0.8em;
+}
+.e-widget-pro-promotion p {
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  text-align: center;
+}
+.e-widget-pro-promotion p img {
+  display: block;
+  margin: 0 auto 20px;
+}
+.e-widget-pro-promotion .e-actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+.e-widget-pro-promotion .e-btn {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.2;
+  padding: 8px 16px;
+  border-radius: var(--e-a-border-radius);
+  background-color: var(--e-a-btn-bg-accent);
+  color: var(--e-a-btn-color-invert);
+  transition: var(--e-a-transition-hover);
+}
+.e-widget-pro-promotion .e-btn:hover, .e-widget-pro-promotion .e-btn:focus {
+  background-color: var(--e-a-btn-bg-accent-hover);
+  color: var(--e-a-btn-color-invert);
+}
+.e-widget-pro-promotion .e-btn:active {
+  background-color: var(--e-a-btn-bg-accent-active);
+}
+.e-widget-pro-promotion .e-btn.e-btn-txt, .e-widget-pro-promotion .dialog-type-confirm .dialog-buttons-wrapper .e-btn.dialog-button.dialog-cancel, .dialog-type-confirm .dialog-buttons-wrapper .e-widget-pro-promotion .e-btn.dialog-button.dialog-cancel,
+.e-widget-pro-promotion .dialog-type-alert .dialog-buttons-wrapper .e-btn.dialog-button.dialog-cancel,
+.dialog-type-alert .dialog-buttons-wrapper .e-widget-pro-promotion .e-btn.dialog-button.dialog-cancel {
+  background: transparent;
+  color: var(--e-a-color-txt);
+}
+.e-widget-pro-promotion .e-btn.e-btn-txt:hover, .e-widget-pro-promotion .dialog-type-confirm .dialog-buttons-wrapper .e-btn.dialog-button.dialog-cancel:hover, .dialog-type-confirm .dialog-buttons-wrapper .e-widget-pro-promotion .e-btn.dialog-button.dialog-cancel:hover,
+.e-widget-pro-promotion .dialog-type-alert .dialog-buttons-wrapper .e-btn.dialog-button.dialog-cancel:hover,
+.dialog-type-alert .dialog-buttons-wrapper .e-widget-pro-promotion .e-btn.dialog-button.dialog-cancel:hover, .e-widget-pro-promotion .e-btn.e-btn-txt:focus, .e-widget-pro-promotion .dialog-type-confirm .dialog-buttons-wrapper .e-btn.dialog-button.dialog-cancel:focus, .dialog-type-confirm .dialog-buttons-wrapper .e-widget-pro-promotion .e-btn.dialog-button.dialog-cancel:focus,
+.e-widget-pro-promotion .dialog-type-alert .dialog-buttons-wrapper .e-btn.dialog-button.dialog-cancel:focus,
+.dialog-type-alert .dialog-buttons-wrapper .e-widget-pro-promotion .e-btn.dialog-button.dialog-cancel:focus {
+  background: var(--e-a-bg-hover);
+  color: var(--e-a-color-txt-hover);
 }
 
 .elementor-section > .elementor-element-overlay,

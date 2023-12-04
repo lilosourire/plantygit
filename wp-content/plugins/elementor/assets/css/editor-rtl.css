@@ -1,4 +1,4 @@
-/*! elementor - v3.16.0 - 20-09-2023 */
+/*! elementor - v3.18.0 - 04-12-2023 */
 .elementor-control-unit-1 {
   width: 27px;
 }
@@ -131,7 +131,6 @@ body.elementor-navigator--dock-hint:after {
 }
 .elementor-nerd-box-icon {
   width: 100px;
-  margin-inline-end: 10px;
 }
 .elementor-nerd-box-title {
   margin-block-start: 20px;
@@ -250,15 +249,15 @@ i.eicon-tilted {
 }
 .elementor-loader-box:nth-of-type(2) {
   top: 0;
-  animation-delay: calc( 1.8s / 4 * -1 );
+  animation-delay: calc(1.8s / 4 * -1);
 }
 .elementor-loader-box:nth-of-type(3) {
   top: 40%;
-  animation-delay: calc( 1.8s / 4 * -2 );
+  animation-delay: calc(1.8s / 4 * -2);
 }
 .elementor-loader-box:nth-of-type(4) {
   bottom: 0;
-  animation-delay: calc( 1.8s / 4 * -3 );
+  animation-delay: calc(1.8s / 4 * -3);
 }
 
 .elementor-loading-title {
@@ -1496,7 +1495,7 @@ body:not(.elementor-device-mobile) .elementor-control.elementor-control-responsi
   position: relative;
   width: 2.5em;
   height: 2.5em;
-  margin: calc( -2.5em + 12px) 0;
+  margin: calc(-2.5em + 12px) 0;
   margin-inline-end: 5px;
 }
 .elementor-control-responsive-switchers__holder {
@@ -1814,7 +1813,7 @@ body:not(.elementor-device-mobile) .elementor-control.elementor-control-responsi
   position: relative;
   width: 2.5em;
   height: 2.5em;
-  margin: calc( -2.5em + 12px) 0;
+  margin: calc(-2.5em + 12px) 0;
   margin-inline-end: 5px;
 }
 .elementor-control-responsive-switchers__holder {
@@ -2098,7 +2097,7 @@ body:not(.elementor-device-mobile) .elementor-control.elementor-control-responsi
   position: relative;
   width: 2.5em;
   height: 2.5em;
-  margin: calc( -2.5em + 12px) 0;
+  margin: calc(-2.5em + 12px) 0;
   margin-inline-end: 5px;
 }
 .elementor-control-responsive-switchers__holder {
@@ -2625,7 +2624,7 @@ body:not(.elementor-device-mobile) .elementor-control.elementor-control-responsi
 .e-global__color-preview-transparent-bg {
   background-image: linear-gradient(45deg, var(--e-a-border-color-bold) 25%, transparent 0, transparent 75%, var(--e-a-border-color-bold) 0, var(--e-a-border-color-bold)), linear-gradient(45deg, var(--e-a-border-color-bold) 25%, transparent 0, transparent 75%, var(--e-a-border-color-bold) 0, var(--e-a-border-color-bold));
   background-size: 12px 12px;
-  background-position: 0 0, calc( 12px / 2 ) calc( 12px / 2 );
+  background-position: 0 0, calc(12px / 2) calc(12px / 2);
 }
 .e-global__color-title {
   flex-grow: 1;
@@ -2761,7 +2760,7 @@ body:not(.elementor-device-mobile) .elementor-control.elementor-control-responsi
 .elementor-control-media-area {
   background-image: linear-gradient(45deg, var(--e-a-border-color-bold) 25%, transparent 0, transparent 75%, var(--e-a-border-color-bold) 0, var(--e-a-border-color-bold)), linear-gradient(45deg, var(--e-a-border-color-bold) 25%, transparent 0, transparent 75%, var(--e-a-border-color-bold) 0, var(--e-a-border-color-bold));
   background-size: 16px 16px;
-  background-position: 0 0, calc( 16px / 2 ) calc( 16px / 2 );
+  background-position: 0 0, calc(16px / 2) calc(16px / 2);
   background-color: var(--e-a-bg-default);
   border: var(--e-a-border-bold);
   aspect-ratio: 21/9;
@@ -3672,12 +3671,17 @@ body:not(.elementor-device-mobile) .elementor-control.elementor-control-responsi
   transform: translateY(-50%);
   background-color: var(--e-a-bg-default);
   box-shadow: -3px 1px 3px rgba(0, 0, 0, 0.05);
+  transition: 0.3s opacity;
 }
 #elementor-mode-switcher:hover {
   background-color: var(--e-a-bg-hover);
 }
 #elementor-mode-switcher:focus-within {
   background-color: var(--e-a-bg-active);
+}
+.e-panel-block-interactions #elementor-mode-switcher {
+  opacity: 0;
+  pointer-events: none;
 }
 #elementor-mode-switcher-preview i {
   display: flex;
@@ -4447,7 +4451,7 @@ label.elementor-template-library-order-label:hover {
 }
 
 .elementor-template-library-template-remote {
-  margin: calc( 30px / 2 );
+  margin: calc(30px / 2);
   padding: 8px;
   border: var(--e-a-border);
   border-radius: 3px;
@@ -5076,38 +5080,45 @@ label.elementor-template-library-order-label:hover {
 
 .elementor-context-menu {
   position: absolute;
-  width: 200px;
+  width: 250px;
+  padding: 5px 0px;
   background-color: var(--e-a-bg-default);
-  border: var(--e-a-border);
-  border-radius: 3px;
-  box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.1);
+  border-radius: var(--e-a-border-radius);
+  box-shadow: var(--e-a-popover-shadow);
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
   z-index: 101;
 }
+.elementor-context-menu-list {
+  display: flex;
+  flex-direction: column;
+}
 .elementor-context-menu-list__group {
-  padding: 5px 0;
+  display: flex;
+  flex-direction: column;
 }
 .elementor-context-menu-list__group:not(:last-child) {
   border-block-end: var(--e-a-border);
 }
 .elementor-context-menu-list__item {
-  padding: 5px 10px;
-  padding-inline-end: 20px;
+  padding: 12px 20px;
   display: flex;
+  gap: 16px;
   cursor: pointer;
   transition: var(--e-a-transition-hover);
+  align-items: center;
 }
 .elementor-context-menu-list__item--disabled {
   cursor: default;
   color: var(--e-a-color-disabled);
 }
-.elementor-context-menu-list__item:not(.elementor-context-menu-list__item--disabled):hover {
+.elementor-context-menu-list__item:not(.elementor-context-menu-list__item--disabled):hover, .elementor-context-menu-list__item:not(.elementor-context-menu-list__item--disabled):focus {
   background-color: var(--e-a-bg-hover);
   color: var(--e-a-color-hover);
 }
 .elementor-context-menu-list__item__icon {
+  display: none;
   width: 20px;
 }
 .elementor-context-menu-list__item__title {
@@ -5119,7 +5130,13 @@ label.elementor-template-library-order-label:hover {
 .elementor-context-menu-list__item__shortcut {
   color: var(--e-a-color-txt-muted);
 }
-.elementor-context-menu-list__item.elementor-context-menu-list__item-delete:not(.elementor-context-menu-list__item--disabled):hover > * {
+.elementor-context-menu-list__item__title, .elementor-context-menu-list__item__shortcut {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1;
+}
+.elementor-context-menu-list__item.elementor-context-menu-list__item-delete:not(.elementor-context-menu-list__item--disabled):hover > *, .elementor-context-menu-list__item.elementor-context-menu-list__item-delete:not(.elementor-context-menu-list__item--disabled):focus > * {
   color: var(--e-global-color-danger);
 }
 .elementor-context-menu .eicon-pro-icon {

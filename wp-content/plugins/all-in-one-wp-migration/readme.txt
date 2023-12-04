@@ -2,9 +2,9 @@
 Contributors: yani.iliev, bangelov, pimjitsawang
 Tags: move, transfer, copy, migrate, backup, clone, restore, db migration, wordpress migration, website migration, database export, database import, apoyo, sauvegarde, di riserva, バックアップ
 Requires at least: 3.3
-Tested up to: 6.3
+Tested up to: 6.4
 Requires PHP: 5.3
-Stable tag: 7.78
+Stable tag: 7.79
 License: GPLv2 or later
 
 Move, transfer, copy, migrate, and backup a site with 1-click. Quick, easy, and reliable.
@@ -24,7 +24,7 @@ Follow these three simple steps, and your site will be live at its new location 
 
 One feature that makes All-in-One WP Migration widely loved (to the tune of over 6,000 5-star user reviews) is that the technical requirements for installing the plugin are simple.
 
-If you have WordPress version between 3.3 and 6.0 and PHP version between 5.3 and 8.2.6, you are good to go. All-in-One WP Migration also supports all versions of MySQL and MariaDB.
+If you have WordPress version between 3.3 and 6.3.1 and PHP version between 5.3 and 8.2.10, you are good to go. All-in-One WP Migration also supports all versions of MySQL and MariaDB.
 
 **Features Spotlight:**
 
@@ -87,6 +87,11 @@ All-in-One WP Migration is in full compliance with General Data Protection Regul
 See our [GDPR Compliant Privacy Policy here](https://www.iubenda.com/privacy-policy/946881).
 
 == Changelog ==
+= 7.79 =
+**Added**
+
+* Support for WordPress v6.4
+
 = 7.78 =
 **Added**
 

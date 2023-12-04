@@ -1,4 +1,4 @@
-/*! elementor - v3.16.0 - 20-09-2023 */
+/*! elementor - v3.18.0 - 04-12-2023 */
 "use strict";
 (self["webpackChunkelementor"] = self["webpackChunkelementor"] || []).push([["frontend"],{
 
@@ -857,7 +857,7 @@ class BackgroundVideo extends elementorModules.frontend.handlers.Base {
         width: videoSize.width,
         autoplay: true,
         loop: !elementSettings.background_play_once,
-        transparent: false,
+        transparent: true,
         background: true,
         muted: true
       };

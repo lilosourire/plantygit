@@ -1,4 +1,4 @@
-/*! elementor - v3.16.0 - 20-09-2023 */
+/*! elementor - v3.18.0 - 04-12-2023 */
 (self["webpackChunkelementor"] = self["webpackChunkelementor"] || []).push([["kit-library"],{
 
 /***/ "../app/modules/kit-library/assets/js/components/badge.scss":
@@ -980,6 +980,7 @@ var _useAddKitPromotionUtm = _interopRequireDefault(__webpack_require__(/*! ../h
 var _appUi = __webpack_require__(/*! @elementor/app-ui */ "@elementor/app-ui");
 var _settingsContext = __webpack_require__(/*! ../context/settings-context */ "../app/modules/kit-library/assets/js/context/settings-context.js");
 var _appsEventTracking = __webpack_require__(/*! elementor-app/event-track/apps-event-tracking */ "../app/assets/js/event-track/apps-event-tracking.js");
+var _tiers = __webpack_require__(/*! elementor-utils/tiers */ "../assets/dev/js/utils/tiers.js");
 __webpack_require__(/*! ./item-header.scss */ "../app/modules/kit-library/assets/js/components/item-header.scss");
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
@@ -999,11 +1000,13 @@ function useKitCallToActionButton(model, _ref) {
     isApplyLoading = _ref.isApplyLoading,
     onConnect = _ref.onConnect,
     _onClick = _ref.onClick;
-  var _useKitCallToAction = (0, _useKitCallToAction3.default)(model.accessLevel),
+  var _useKitCallToAction = (0, _useKitCallToAction3.default)(model.accessTier),
     _useKitCallToAction2 = (0, _slicedToArray2.default)(_useKitCallToAction, 2),
     type = _useKitCallToAction2[0],
     subscriptionPlan = _useKitCallToAction2[1].subscriptionPlan;
   var promotionUrl = (0, _useAddKitPromotionUtm.default)(subscriptionPlan.promotion_url, model.id, model.title);
+  var _useSettingsContext = (0, _settingsContext.useSettingsContext)(),
+    settings = _useSettingsContext.settings;
   return (0, _react.useMemo)(function () {
     if (type === _useKitCallToAction3.TYPE_CONNECT) {
       return {
@@ -1024,8 +1027,7 @@ function useKitCallToActionButton(model, _ref) {
     if (type === _useKitCallToAction3.TYPE_PROMOTION && subscriptionPlan) {
       return {
         id: 'promotion',
-        // Translators: %s is the subscription plan name.
-        text: __('Go %s', 'elementor').replace('%s', subscriptionPlan.label),
+        text: settings.is_pro ? 'Upgrade' : "Go ".concat(subscriptionPlan.label),
         hideText: false,
         variant: 'contained',
         color: 'cta',
@@ -1055,8 +1057,8 @@ function useKitCallToActionButton(model, _ref) {
   }, [type, subscriptionPlan, isApplyLoading, apply]);
 }
 function ItemHeader(props) {
-  var _useSettingsContext = (0, _settingsContext.useSettingsContext)(),
-    updateSettings = _useSettingsContext.updateSettings;
+  var _useSettingsContext2 = (0, _settingsContext.useSettingsContext)(),
+    updateSettings = _useSettingsContext2.updateSettings;
   var _useState = (0, _react.useState)(false),
     _useState2 = (0, _slicedToArray2.default)(_useState, 2),
     isConnectDialogOpen = _useState2[0],
@@ -1082,9 +1084,11 @@ function ItemHeader(props) {
         if (401 === errorResponse.code) {
           elementorCommon.config.library_connect.is_connected = false;
           elementorCommon.config.library_connect.current_access_level = 0;
+          elementorCommon.config.library_connect.current_access_tier = _tiers.TIERS.free;
           updateSettings({
             is_library_connected: false,
-            access_level: 0
+            access_level: 0,
+            access_tier: _tiers.TIERS.free
           });
           setIsConnectDialogOpen(true);
           return;
@@ -1144,14 +1148,20 @@ function ItemHeader(props) {
     },
     onSuccess: function onSuccess(data) {
       var accessLevel = data.kits_access_level || data.access_level || 0;
+      var accessTier = data.access_tier;
       elementorCommon.config.library_connect.is_connected = true;
       elementorCommon.config.library_connect.current_access_level = accessLevel;
+      elementorCommon.config.library_connect.current_access_tier = accessTier;
       updateSettings({
         is_library_connected: true,
-        access_level: accessLevel // BC: Check for 'access_level' prop
+        access_level: accessLevel,
+        // BC: Check for 'access_level' prop
+        access_tier: accessTier
       });
-
       if (data.access_level < props.model.accessLevel) {
+        return;
+      }
+      if (!(0, _tiers.isTierAtLeast)(accessTier, props.model.accessTier)) {
         return;
       }
       apply();
@@ -1301,15 +1311,22 @@ var _useKitCallToAction3 = _interopRequireWildcard(__webpack_require__(/*! ../ho
 var _useAddKitPromotionUtm = _interopRequireDefault(__webpack_require__(/*! ../hooks/use-add-kit-promotion-utm */ "../app/modules/kit-library/assets/js/hooks/use-add-kit-promotion-utm.js"));
 var _appUi = __webpack_require__(/*! @elementor/app-ui */ "@elementor/app-ui");
 var _appsEventTracking = __webpack_require__(/*! elementor-app/event-track/apps-event-tracking */ "../app/assets/js/event-track/apps-event-tracking.js");
+var _settingsContext = __webpack_require__(/*! ../context/settings-context */ "../app/modules/kit-library/assets/js/context/settings-context.js");
 __webpack_require__(/*! ./kit-list-item.scss */ "../app/modules/kit-library/assets/js/components/kit-list-item.scss");
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 var KitListItem = function KitListItem(props) {
-  var _useKitCallToAction = (0, _useKitCallToAction3.default)(props.model.accessLevel),
+  var _useKitCallToAction = (0, _useKitCallToAction3.default)(props.model.accessTier),
     _useKitCallToAction2 = (0, _slicedToArray2.default)(_useKitCallToAction, 2),
     type = _useKitCallToAction2[0],
-    subscriptionPlan = _useKitCallToAction2[1].subscriptionPlan;
+    _useKitCallToAction2$ = _useKitCallToAction2[1],
+    subscriptionPlan = _useKitCallToAction2$.subscriptionPlan,
+    badgeLabel = _useKitCallToAction2$.badgeLabel;
+  var _useSettingsContext = (0, _settingsContext.useSettingsContext)(),
+    settings = _useSettingsContext.settings;
   var promotionUrl = (0, _useAddKitPromotionUtm.default)(subscriptionPlan.promotion_url, props.model.id, props.model.title);
+  var ctaText = settings.is_pro ? 'Upgrade' : "Go ".concat((subscriptionPlan === null || subscriptionPlan === void 0 ? void 0 : subscriptionPlan.label) || '');
+  var showPromotion = _useKitCallToAction3.TYPE_PROMOTION === type;
   var eventTracking = function eventTracking(command) {
     (0, _appsEventTracking.appsEventTrackingDispatch)(command, {
       kit_name: props.model.title,
@@ -1335,10 +1352,13 @@ var KitListItem = function KitListItem(props) {
   })), /*#__PURE__*/_react.default.createElement(_appUi.CardBody, null, /*#__PURE__*/_react.default.createElement(_appUi.CardImage, {
     alt: props.model.title,
     src: props.model.thumbnailUrl || ''
-  }, !elementorAppConfig.hasPro && (subscriptionPlan === null || subscriptionPlan === void 0 ? void 0 : subscriptionPlan.label) && /*#__PURE__*/_react.default.createElement(_badge.default, {
+  }, showPromotion && /*#__PURE__*/_react.default.createElement(_badge.default, {
     variant: "sm",
-    className: "e-kit-library__kit-item-subscription-plan-badge"
-  }, subscriptionPlan.label), /*#__PURE__*/_react.default.createElement(_appUi.CardOverlay, null, /*#__PURE__*/_react.default.createElement(_appUi.Grid, {
+    className: "e-kit-library__kit-item-subscription-plan-badge",
+    style: {
+      '--e-a-color-brand': subscriptionPlan.color
+    }
+  }, badgeLabel), /*#__PURE__*/_react.default.createElement(_appUi.CardOverlay, null, /*#__PURE__*/_react.default.createElement(_appUi.Grid, {
     container: true,
     direction: "column",
     className: "e-kit-library__kit-item-overlay"
@@ -1350,9 +1370,9 @@ var KitListItem = function KitListItem(props) {
     onClick: function onClick() {
       return eventTracking('kit-library/check-out-kit');
     }
-  }), type === _useKitCallToAction3.TYPE_PROMOTION && (subscriptionPlan === null || subscriptionPlan === void 0 ? void 0 : subscriptionPlan.label) && /*#__PURE__*/_react.default.createElement(_appUi.Button, {
+  }), showPromotion && /*#__PURE__*/_react.default.createElement(_appUi.Button, {
     className: "e-kit-library__kit-item-overlay-promotion-button",
-    text: "Go ".concat(subscriptionPlan.label),
+    text: ctaText,
     icon: "eicon-external-link-square",
     url: promotionUrl,
     target: "_blank"
@@ -2172,6 +2192,8 @@ exports.KEY = void 0;
 exports["default"] = useContentTypes;
 var _contentType = _interopRequireDefault(__webpack_require__(/*! ../models/content-type */ "../app/modules/kit-library/assets/js/models/content-type.js"));
 var _reactQuery = __webpack_require__(/*! react-query */ "../node_modules/react-query/es/index.js");
+var _settingsContext = __webpack_require__(/*! ../context/settings-context */ "../app/modules/kit-library/assets/js/context/settings-context.js");
+var _tiers = __webpack_require__(/*! elementor-utils/tiers */ "../assets/dev/js/utils/tiers.js");
 var KEY = 'content-types';
 
 /**
@@ -2182,14 +2204,20 @@ var KEY = 'content-types';
  */
 exports.KEY = KEY;
 function useContentTypes() {
-  return (0, _reactQuery.useQuery)([KEY], fetchContentTypes);
+  var _useSettingsContext = (0, _settingsContext.useSettingsContext)(),
+    settings = _useSettingsContext.settings;
+  return (0, _reactQuery.useQuery)([KEY, settings], function () {
+    return fetchContentTypes(settings);
+  });
 }
 
 /**
+ * @param {Object} settings - Current settings
+ *
  * @return {Promise.constructor} content types
  */
-function fetchContentTypes() {
-  return Promise.resolve([{
+function fetchContentTypes(settings) {
+  var contentTypes = [{
     id: 'page',
     label: __('Pages', 'elementor'),
     doc_types: ['wp-page'],
@@ -2203,12 +2231,28 @@ function fetchContentTypes() {
     // Legacy Types
     '404', 'single'],
     order: 1
-  }, {
-    id: 'popup',
-    label: __('Popups', 'elementor'),
-    doc_types: ['popup'],
-    order: 2
-  }]).then(function (data) {
+  }];
+
+  // BC: When user has old Pro version which doesn't override the `free` access_tier.
+  var userAccessTier = settings.access_tier;
+  var hasActiveProLicense = settings.is_pro && settings.is_library_connected;
+  var shouldFallbackToLegacy = hasActiveProLicense && userAccessTier === _tiers.TIERS.free;
+
+  // Fallback to the last access_tier before the new tiers were introduced.
+  // TODO: Remove when Pro with the new tiers is stable.
+  if (shouldFallbackToLegacy) {
+    userAccessTier = _tiers.TIERS['essential-oct2023'];
+  }
+  var tierThatSupportsPopups = _tiers.TIERS['essential-oct2023'];
+  if ((0, _tiers.isTierAtLeast)(userAccessTier, tierThatSupportsPopups)) {
+    contentTypes.push({
+      id: 'popup',
+      label: __('Popups', 'elementor'),
+      doc_types: ['popup'],
+      order: 2
+    });
+  }
+  return Promise.resolve(contentTypes).then(function (data) {
     return data.map(function (contentType) {
       return _contentType.default.createFromResponse(contentType);
     });
@@ -2297,24 +2341,40 @@ exports.TYPE_PROMOTION = exports.TYPE_CONNECT = exports.TYPE_APPLY = void 0;
 exports["default"] = useKitCallToAction;
 var _react = __webpack_require__(/*! react */ "react");
 var _settingsContext = __webpack_require__(/*! ../context/settings-context */ "../app/modules/kit-library/assets/js/context/settings-context.js");
+var _tiers = __webpack_require__(/*! elementor-utils/tiers */ "../assets/dev/js/utils/tiers.js");
 var TYPE_CONNECT = 'connect';
 exports.TYPE_CONNECT = TYPE_CONNECT;
 var TYPE_PROMOTION = 'promotion';
 exports.TYPE_PROMOTION = TYPE_PROMOTION;
 var TYPE_APPLY = 'apply';
 exports.TYPE_APPLY = TYPE_APPLY;
-function useKitCallToAction(kitAccessLevel) {
+function useKitCallToAction(kitAccessTier) {
+  var _settings$subscriptio2;
   var _useSettingsContext = (0, _settingsContext.useSettingsContext)(),
     settings = _useSettingsContext.settings;
+
+  // BC: When user has old Pro version which doesn't override the `free` access_tier.
+  var userAccessTier = settings.access_tier;
+  var hasActiveProLicense = settings.is_pro && settings.is_library_connected;
+  var shouldFallbackToLegacy = hasActiveProLicense && userAccessTier === _tiers.TIERS.free;
+
+  // Fallback to the last access_tier before the new tiers were introduced.
+  // TODO: Remove when Pro with the new tiers is stable.
+  if (shouldFallbackToLegacy) {
+    userAccessTier = _tiers.TIERS['essential-oct2023'];
+  }
 
   // SubscriptionPlan can be null when the context is not filled (can be happened when using back button in the browser.)
   var subscriptionPlan = (0, _react.useMemo)(function () {
     var _settings$subscriptio;
-    return (_settings$subscriptio = settings.subscription_plans) === null || _settings$subscriptio === void 0 ? void 0 : _settings$subscriptio[kitAccessLevel];
-  }, [settings, kitAccessLevel]);
+    return (_settings$subscriptio = settings.subscription_plans) === null || _settings$subscriptio === void 0 ? void 0 : _settings$subscriptio[kitAccessTier];
+  }, [settings, kitAccessTier]);
+
+  // Free user should see a generic "Pro" badge.
+  var badgeLabel = userAccessTier === _tiers.TIERS.free ? (_settings$subscriptio2 = settings.subscription_plans) === null || _settings$subscriptio2 === void 0 ? void 0 : _settings$subscriptio2.essential.label : subscriptionPlan === null || subscriptionPlan === void 0 ? void 0 : subscriptionPlan.label;
   var type = (0, _react.useMemo)(function () {
     // The user can apply this kit (the user access level is equal or greater then the kit access level).
-    var isAuthorizeToApplyKit = settings.access_level >= kitAccessLevel;
+    var isAuthorizeToApplyKit = (0, _tiers.isTierAtLeast)(userAccessTier, kitAccessTier);
 
     // The user in not connected and has pro plugin or the kit is a free kit.
     if (!settings.is_library_connected && (settings.is_pro || isAuthorizeToApplyKit)) {
@@ -2328,9 +2388,10 @@ function useKitCallToAction(kitAccessLevel) {
 
     // The user is connected and can access the kit.
     return TYPE_APPLY;
-  }, [settings, kitAccessLevel]);
+  }, [settings, kitAccessTier]);
   return [type, {
-    subscriptionPlan: subscriptionPlan
+    subscriptionPlan: subscriptionPlan,
+    badgeLabel: badgeLabel
   }];
 }
 
@@ -3116,6 +3177,7 @@ var Kit = /*#__PURE__*/function (_BaseModel) {
         thumbnailUrl: kit.thumbnail_url,
         previewUrl: kit.preview_url,
         accessLevel: kit.access_level,
+        accessTier: kit.access_tier,
         trendIndex: kit.trend_index,
         popularityIndex: kit.popularity_index,
         featuredIndex: kit.featured_index,
@@ -4475,7 +4537,50 @@ var NewPageKitListItem = function NewPageKitListItem() {
 var _default = _react.default.memo(NewPageKitListItem);
 exports["default"] = _default;
 
+/***/ }),
+
+/***/ "../assets/dev/js/utils/tiers.js":
+/*!***************************************!*\
+  !*** ../assets/dev/js/utils/tiers.js ***!
+  \***************************************/
+/***/ ((__unused_webpack_module, exports) => {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.isTierAtLeast = exports.TIERS_PRIORITY = exports.TIERS = void 0;
+var TIERS_PRIORITY = Object.freeze(['free', 'essential', 'essential-oct2023', 'advanced', 'expert', 'agency']);
+
+/**
+ * @type {Readonly<{
+ *     free: string;
+ *     essential: string;
+ *     'essential-oct2023': string;
+ *     advanced: string;
+ *     expert: string;
+ *     agency: string;
+ * }>}
+ */
+exports.TIERS_PRIORITY = TIERS_PRIORITY;
+var TIERS = Object.freeze(TIERS_PRIORITY.reduce(function (acc, tier) {
+  acc[tier] = tier;
+  return acc;
+}, {}));
+exports.TIERS = TIERS;
+var isTierAtLeast = function isTierAtLeast(currentTier, expectedTier) {
+  var currentTierIndex = TIERS_PRIORITY.indexOf(currentTier);
+  var expectedTierIndex = TIERS_PRIORITY.indexOf(expectedTier);
+  if (-1 === currentTierIndex || -1 === expectedTierIndex) {
+    return false;
+  }
+  return currentTierIndex >= expectedTierIndex;
+};
+exports.isTierAtLeast = isTierAtLeast;
+
 /***/ })
 
 }]);
-//# sourceMappingURL=kit-library.b4cf9f541e44f7bbc972.bundle.js.map
+//# sourceMappingURL=kit-library.411b75eeafae7457107e.bundle.js.map

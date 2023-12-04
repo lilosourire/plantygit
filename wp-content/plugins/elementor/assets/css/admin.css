@@ -1,4 +1,4 @@
-/*! elementor - v3.16.0 - 20-09-2023 */
+/*! elementor - v3.18.0 - 04-12-2023 */
 .elementor-button,
 .e-btn,
 #elementor-deactivate-feedback-modal .dialog-skip,
@@ -703,15 +703,15 @@ body .block-editor #elementor-switch-mode .button i {
 }
 #elementor-editor .elementor-loader-box:nth-of-type(2) {
   top: 0;
-  animation-delay: calc( 1.8s / 4 * -1 );
+  animation-delay: calc(1.8s / 4 * -1);
 }
 #elementor-editor .elementor-loader-box:nth-of-type(3) {
   top: 40%;
-  animation-delay: calc( 1.8s / 4 * -2 );
+  animation-delay: calc(1.8s / 4 * -2);
 }
 #elementor-editor .elementor-loader-box:nth-of-type(4) {
   bottom: 0;
-  animation-delay: calc( 1.8s / 4 * -3 );
+  animation-delay: calc(1.8s / 4 * -3);
 }
 #elementor-editor .elementor-loading-title {
   color: var(--e-a-color-txt);
@@ -780,7 +780,7 @@ body .block-editor #elementor-switch-mode .button i {
   font-size: 32px;
   font-weight: 300;
   color: inherit;
-  margin: 40px 0 10px;
+  margin: 20px 0 10px;
   line-height: 1.2;
 }
 .elementor-blank_state p {
@@ -1279,6 +1279,9 @@ fieldset:disabled a.e-button {
 }
 #elementor-system-info .elementor-system-info-section:not(.elementor-system-info-log) tbody td:first-child {
   width: 300px;
+}
+#elementor-system-info .elementor-system-info-section:not(.elementor-system-info-log) td {
+  white-space: break-spaces;
 }
 #elementor-system-info .elementor-system-info-field-recommendation {
   padding-inline-start: 10px;
