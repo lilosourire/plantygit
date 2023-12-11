@@ -671,6 +671,10 @@ font-size: xxx-large;
    .boutonenv>input:nth-child(1) {
       margin-left: 18% !important;
    }
+
+   #wpcf7-f330-p10-o1 > form > div.contact > div.texte > p:nth-child(3) > span > textarea{
+      width: 316px!important;
+   }
 }
 
 @media screen and (max-width: 450px) {
@@ -704,7 +708,7 @@ font-size: xxx-large;
    }
 
    textarea.wpcf7-form-control {
-      width: 320px !important;
+      width: 454px !important;
    }
 
    .boutoncontact {
@@ -740,12 +744,13 @@ font-size: xxx-large;
    }
 
    .contact input {
-      width: 320px !important;
+      width: 454px !important;
    }
 
    h1.elementor-heading-title {
       display: none !important;
    }
+
 }
 
 @media screen and (max-width: 1226px) {
@@ -807,7 +812,7 @@ font-size: xxx-large;
    }
 
    textarea.wpcf7-form-control {
-      width: 320px !important;
+      width: 454px !important;
    }
 
    .boutoncontact {
@@ -830,7 +835,6 @@ font-size: xxx-large;
    }
 
 }
-
 
 
 /* temp CODE */

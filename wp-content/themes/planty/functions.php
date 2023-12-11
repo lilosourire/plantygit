@@ -93,3 +93,15 @@ function menu_admin($menu_items, $args)
 
     return $menu_items;
 }
+
+/* modification du bouton commander en fonction du statut de l'admin */
+
+function modifier_margin_top_commander()
+{
+    if (is_user_logged_in()) { // Vérifie si l'utilisateur est connecté
+        echo '<style>#menu-item-914 > a:nth-child(1) { margin-top: 32px; }</style>';
+    } else {
+        echo '<style>#menu-item-914 > a:nth-child(1) { margin-top: 0px; }</style>';
+    }
+}
+add_action('wp_head', 'modifier_margin_top_commander');
